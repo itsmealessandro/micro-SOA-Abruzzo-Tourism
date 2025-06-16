@@ -17,7 +17,7 @@ The system is structured around the following key components:
   - `Trails Provider`: trail and hiking info.
   - `Weather Provider`: weather/environmental data (SOAP).
   - `Events Provider`: local events, culture.
-  - `Food Provider`: gastronomy and restaurants (optional).
+  - `Food Provider`: gastronomy and restaurants.
 
 All services are containerized and orchestrated using Docker Compose.
 
@@ -71,7 +71,7 @@ The following ports will be exposed:
 - **provider-trails**: REST API for hiking and biking routes.
 - **provider-weather**: SOAP service with forecasts and alerts.
 - **provider-events**: REST API with regional events.
-- **provider-food** *(optional)*: regional cuisine and restaurant listings.
+- **provider-food**: regional cuisine and restaurant listings.
 
 ---
 
@@ -118,7 +118,6 @@ spring:
 - Apache CXF (SOAP)
 - Docker, Docker Compose
 - Swagger / OpenAPI
-- Eureka (optional for service discovery)
 
 ---
 
@@ -132,7 +131,7 @@ spring:
 ├── provider-trails/
 ├── provider-weather/
 ├── provider-events/
-├── provider-food/           # Optional
+├── provider-food/
 ├── docker-compose.yml
 └── README.md
 ```
