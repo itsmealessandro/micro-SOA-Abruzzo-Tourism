@@ -1,12 +1,4 @@
 services:
-  # === External API Gateway ===
-  api-gateway-external:
-    image: api-gateway-external
-    build: ./api-gateway-external
-    ports:
-      - "8080:8080"  # Exposed to the outside
-    networks:
-      - soa-net
 
   # === Internal API Gateway ===
   api-gateway-internal:

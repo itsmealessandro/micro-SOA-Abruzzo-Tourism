@@ -9,7 +9,6 @@ This project implements a service-oriented architecture (SOA) for recommending, 
 The system is structured around the following key components:
 
 - **Client App** – Web or mobile frontend for tourists.
-- **External API Gateway** – Entry point for client interactions.
 - **Prosumers**:
   - `Itinerary Aggregator`: builds personalized itineraries.
   - `Availability Coordinator`: verifies availability of the itinerary's resources.
@@ -34,8 +33,8 @@ All services are containerized and orchestrated using Docker Compose.
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/abruzzo-tourism-soa.git
-cd abruzzo-tourism-soa
+git clone https://https://github.com/itsmealessandro/micro-SOA-Abruzzo-Tourism.git
+cd micro-SOA-Abruzzo-Tourism
 ```
 
 ### 3. Build & Start the System
@@ -48,7 +47,6 @@ The following ports will be exposed:
 
 | Service              | Port                           |
 | -------------------- | ------------------------------ |
-| External API Gateway | `8080`                         |
 | Internal API Gateway | `8081`                         |
 | Other services       | Internal only (Docker network) |
 
@@ -79,7 +77,7 @@ The following ports will be exposed:
 
 ## 🧭 Interaction Example
 
-1. The client submits preferences to `api-gateway-external` at `/api/itinerary`.
+1. The client submits preferences to at `/api/itinerary`.
 2. `Itinerary Aggregator` queries multiple providers via `api-gateway-internal`.
 3. `Availability Coordinator` checks if the itinerary is feasible.
 4. Both prosumers synchronize, and the final plan is returned to the client.
@@ -96,7 +94,7 @@ The following ports will be exposed:
 
 ## 🐳 Docker Compose Setup
 
-See `docker-compose.yml` for details. All services run on the same Docker bridge network (`soa-net`).
+See `compose.yaml` for details. All services run on the same Docker bridge network (`soa-net`).
 
 Example route configuration in the **internal gateway**:
 
@@ -128,7 +126,6 @@ spring:
 
 ```
 .
-├── api-gateway-external/
 ├── api-gateway-internal/
 ├── itinerary-aggregator/
 ├── availability-coordinator/
