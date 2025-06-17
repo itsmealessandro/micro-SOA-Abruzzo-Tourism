@@ -1,4 +1,4 @@
-package com.example.provider_trails;
+package rest.spring.provider_trails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProviderTrailsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProviderTrailsApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(ProviderTrailsApplication.class, args);
+  }
 
 }
