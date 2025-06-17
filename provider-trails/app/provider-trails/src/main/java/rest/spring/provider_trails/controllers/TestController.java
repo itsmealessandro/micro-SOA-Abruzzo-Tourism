@@ -1,14 +1,36 @@
 package rest.spring.provider_trails.controllers;
 
+import java.util.Set;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class TestController {
+import rest.spring.provider_trails.model.Trail;
+import rest.spring.provider_trails.services.TrialService;
 
-  @GetMapping("/test")
-  public String testMethod() {
-    return "Hi, I'm the test";
+@RestController
+@RequestMapping("/api")
+public class TestController {
+  final TrialService trialService;
+
+  // NOTE: IOC paradigm
+  public TestController(TrialService trialService) {
+    this.trialService = trialService;
+
+  }
+
+  @GetMapping(value = "/trails", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Set<Trail>> getAllTrails() {
+    Set<Trail> trails = null;
+    trails = trialService.getAllTrails();
+
+    if (trails == null || trails.isEmpty()) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(trails);
 
   }
 
