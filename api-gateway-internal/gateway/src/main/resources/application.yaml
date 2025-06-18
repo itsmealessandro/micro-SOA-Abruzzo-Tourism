@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: trail-provider
+              uri: http://provider-trails:8081
+              predicates:
+                - Path=/trails-api/**

@@ -17,7 +17,7 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copio il JAR dalla build
-COPY --from=build /build/provider-trails/target/provider-trails-*.jar app.jar
+COPY --from=build /build/provider-trails/target/provider_trails-*.jar app.jar
 
 EXPOSE 8080
 
