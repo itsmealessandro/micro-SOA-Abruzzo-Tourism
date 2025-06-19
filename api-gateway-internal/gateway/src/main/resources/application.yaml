@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   cloud:
     gateway:
@@ -5,6 +8,6 @@ spring:
         webflux:
           routes:
             - id: trail-provider
-              uri: http://provider-trails:8081
+              uri: http://localhost:8081
               predicates:
-                - Path=/trails-api/**
+                - Path=/trails_api/**

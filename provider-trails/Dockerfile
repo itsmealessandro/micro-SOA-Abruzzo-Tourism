@@ -9,7 +9,8 @@ COPY app/provider-trails ./provider-trails
 
 # Entro nella directory e compilo
 WORKDIR /build/provider-trails
-RUN mvn clean package -DskipTests
+
+RUN mvn clean package
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jre-alpine
@@ -19,6 +20,6 @@ WORKDIR /app
 # Copio il JAR dalla build
 COPY --from=build /build/provider-trails/target/provider_trails-*.jar app.jar
 
-EXPOSE 8080
+EXPOSE 8081
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

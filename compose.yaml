@@ -5,26 +5,26 @@ services:
     image: api-gateway-internal
     build: ./api-gateway-internal
     ports:
-      - "8081:8080"  # Internal gateway
+      - "8080:8080"  # Internal gateway
     networks:
       - soa-net
 
-  # === Prosumers ===
-  itinerary-aggregator:
-    image: itinerary-aggregator
-    build: ./itinerary-aggregator
-    depends_on:
-      - api-gateway-internal
-    networks:
-      - soa-net
-
-  availability-coordinator:
-    image: availability-coordinator
-    build: ./availability-coordinator
-    depends_on:
-      - api-gateway-internal
-    networks:
-      - soa-net
+  # # === Prosumers ===
+  # itinerary-aggregator:
+  #   image: itinerary-aggregator
+  #   build: ./itinerary-aggregator
+  #   depends_on:
+  #     - api-gateway-internal
+  #   networks:
+  #     - soa-net
+  #
+  # availability-coordinator:
+  #   image: availability-coordinator
+  #   build: ./availability-coordinator
+  #   depends_on:
+  #     - api-gateway-internal
+  #   networks:
+  #     - soa-net
 
   # === Providers ===
   provider-trails:
@@ -32,25 +32,27 @@ services:
     build: ./provider-trails
     networks:
       - soa-net
+    ports:
+      - "8081:8081"
 
-  provider-weather:
-    image: provider-weather
-    build: ./provider-weather
-    networks:
-      - soa-net
-
-  provider-events:
-    image: provider-events
-    build: ./provider-events
-    networks:
-      - soa-net
-
-  # Optional provider for local gastronomy
-  provider-food:
-    image: provider-food
-    build: ./provider-food
-    networks:
-      - soa-net
+  # provider-weather:
+  #   image: provider-weather
+  #   build: ./provider-weather
+  #   networks:
+  #     - soa-net
+  #
+  # provider-events:
+  #   image: provider-events
+  #   build: ./provider-events
+  #   networks:
+  #     - soa-net
+  #
+  # # Optional provider for local gastronomy
+  # provider-food:
+  #   image: provider-food
+  #   build: ./provider-food
+  #   networks:
+  #     - soa-net
 
 networks:
   soa-net:
