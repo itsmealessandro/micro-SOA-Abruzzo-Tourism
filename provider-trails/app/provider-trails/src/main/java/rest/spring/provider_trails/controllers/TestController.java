@@ -14,7 +14,7 @@ import rest.spring.provider_trails.model.Trail;
 import rest.spring.provider_trails.services.TrialService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/trails_api")
 public class TestController {
   final TrialService trialService;
 
