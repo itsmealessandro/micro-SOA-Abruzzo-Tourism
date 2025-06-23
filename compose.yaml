@@ -53,6 +53,25 @@ services:
   #   build: ./provider-food
   #   networks:
   #     - soa-net
+  
+  provider-food:
+    image: provider-food
+    build: ./provider-food
+    ports:
+      - "8083:8083"
+    networks:
+      - soa-net
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8083/food-api/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  soa-net:
+    driver: bridge
 
 networks:
   soa-net:
