@@ -9,11 +9,11 @@
     <version>3.5.0</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
-  <groupId>rest.spring</groupId>
-  <artifactId>provider_trails</artifactId>
-  <version>1.0</version>
-  <name>provider_trails</name>
-  <description>Demo project for Spring Boot provider-trails</description>
+  <groupId>com.internal</groupId>
+  <artifactId>gateway</artifactId>
+  <version>1</version>
+  <name>gateway</name>
+  <description>gateway for providers</description>
   <url />
   <licenses>
     <license />
@@ -29,32 +29,29 @@
   </scm>
   <properties>
     <java.version>21</java.version>
+    <spring-cloud.version>2025.0.0</spring-cloud.version>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-    </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-gateway-server-webflux</artifactId>
     </dependency>
 
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-      <version>2.8.9</version>
-    </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <plugins>
@@ -64,6 +61,5 @@
       </plugin>
     </plugins>
   </build>
-
 
 </project>
