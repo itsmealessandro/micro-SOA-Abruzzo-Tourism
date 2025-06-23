@@ -1,39 +1,39 @@
 services:
 
   # === Internal API Gateway ===
-  api-gateway-internal:
-    image: api-gateway-internal
-    build: ./api-gateway-internal
-    ports:
-      - "8080:8080"  # Internal gateway
-    networks:
-      - soa-net
+    api-gateway-internal:
+      image: api-gateway-internal
+      build: ./api-gateway-internal
+      ports:
+        - "8080:8080"  # Internal gateway
+      networks:
+        - soa-net
 
   # # === Prosumers ===
-  # itinerary-aggregator:
-  #   image: itinerary-aggregator
-  #   build: ./itinerary-aggregator
-  #   depends_on:
-  #     - api-gateway-internal
-  #   networks:
-  #     - soa-net
-  #
-  # availability-coordinator:
-  #   image: availability-coordinator
-  #   build: ./availability-coordinator
-  #   depends_on:
-  #     - api-gateway-internal
-  #   networks:
-  #     - soa-net
+    itinerary-aggregator:
+      image: itinerary-aggregator
+      build: ./itinerary-aggregator
+      depends_on:
+        - api-gateway-internal
+      networks:
+        - soa-net
+  
+    availability-coordinator:
+      image: availability-coordinator
+      build: ./availability-coordinator
+      depends_on:
+        - api-gateway-internal
+      networks:
+        - soa-net
 
-  # === Providers ===
-  provider-trails:
-    image: provider-trails
-    build: ./provider-trails
-    networks:
-      - soa-net
-    ports:
-      - "8081:8081"
+  ## === Providers ===
+  # provider-trails:
+  # image: provider-trails
+  #  build: ./provider-trails
+  #  networks:
+  #    - soa-net
+  #  ports:
+  #    - "8081:8081"
 
   # provider-weather:
   #   image: provider-weather
