@@ -1,17 +1,15 @@
 package com.example.providerfood.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import com.example.providerfood.model.LocalDish;
 import com.example.providerfood.model.Restaurant;
 import com.example.providerfood.service.FoodService;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/food")
@@ -20,6 +18,7 @@ public class FoodController {
 
     private final FoodService foodService;
 
+    // Usa l'iniezione nel costruttore
     @Autowired
     public FoodController(FoodService foodService) {
         this.foodService = foodService;
