@@ -1,12 +1,11 @@
 package com.example.providerfood.service;
 
-import java.util.Arrays;
-import java.util.List;
-
+import com.example.providerfood.model.Restaurant;
+import com.example.providerfood.model.LocalDish;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.example.providerfood.repository.FoodRepository;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class FoodService {
@@ -26,7 +25,6 @@ public class FoodService {
     }
 
     public List<LocalDish> findDishesByRegion(String region) {
-        // Implementazione fittizia per demo
         return Arrays.asList(
             new LocalDish("d1", "Arrosticini", "Spiedini di carne ovina", "L'Aquila"),
             new LocalDish("d2", "Maccheroni alla chitarra", "Pasta fresca con sugo di agnello", "Chieti"),

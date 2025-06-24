@@ -1,9 +1,10 @@
-package com.example.providerfood.repository;
+package com.example.providerfood.service;
 
-import java.util.List;
 
+import com.example.providerfood.model.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import java.util.List;
 
 @Repository
 public interface FoodRepository extends JpaRepository<Restaurant, String> {
