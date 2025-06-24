@@ -24,14 +24,6 @@ spring:
                 - Path=/food-api/**
               filters:
                 - RewritePath=/food-api/(?<segment>.*), /$\{segment}
-                
-            - id: trails-service
-              uri: http://provider-trails:8085
-              predicates:
-                - Path=/trails-api/**
-              filters:
-                - RewritePath=/trails-api/(?<segment>.*), /$\{segment}
-                
             - id: itinerary-aggregator
               uri: http://itinerary-aggregator:8082
               predicates:
@@ -45,3 +37,9 @@ spring:
                 - Path=/availability-api/**
               filters:
                 - RewritePath=/availability-api/(?<segment>.*), /$\{segment}
+
+            - id: weather-provider
+              uri: http://localhost:8082
+              predicates:
+                - Path=/weather_api/**
+
