@@ -55,8 +55,8 @@ services:
   #   build: ./provider-food
   #   networks:
   #     - soa-net
-  
-    provider-food:
+
+  provider-food:
     image: provider-food
     build: ./provider-food
     ports:
