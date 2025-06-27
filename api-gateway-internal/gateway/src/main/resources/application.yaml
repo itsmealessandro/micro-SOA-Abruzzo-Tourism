@@ -7,39 +7,33 @@ spring:
       server:
         webflux:
           routes:
-            - id: trail-provider
-              uri: http://localhost:8081
+            - id: provider-trails
+              uri: http://provider-trails:8081
               predicates:
-                - Path=/trails_api/**
-            - id: events-service
-              uri: http://provider-events:8083
-              predicates:
-                - Path=/events-api/**
-              filters:
-                - RewritePath=/events-api/(?<segment>.*), /$\{segment}
-                
-            - id: food-service
-              uri: http://provider-food:8084
-              predicates:
-                - Path=/food-api/**
-              filters:
-                - RewritePath=/food-api/(?<segment>.*), /$\{segment}
-            - id: itinerary-aggregator
-              uri: http://itinerary-aggregator:8082
-              predicates:
-                - Path=/itinerary-api/**
-              filters:
-                - RewritePath=/itinerary-api/(?<segment>.*), /$\{segment}
-                
-            - id: availability-coordinator
-              uri: http://availability-coordinator:8081
-              predicates:
-                - Path=/availability-api/**
-              filters:
-                - RewritePath=/availability-api/(?<segment>.*), /$\{segment}
+                - Path=/trails-api/**
 
             - id: weather-provider
               uri: http://localhost:8082
               predicates:
-                - Path=/weather_api/**
+                - Path=/weather-api/**
+
+            - id: events-service
+              uri: http://provider-events:8083
+              predicates:
+                - Path=/events-api/**
+
+            - id: food-service
+              uri: http://provider-food:8084
+              predicates:
+                - Path=/food-api/**
+
+            - id: itinerary-aggregator
+              uri: http://itinerary-aggregator:8082
+              predicates:
+                - Path=/itinerary-api/**
+
+            - id: availability-coordinator
+              uri: http://availability-coordinator:8081
+              predicates:
+                - Path=/availability-api/**
 
