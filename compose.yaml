@@ -10,17 +10,17 @@ services:
       - soa-net
 
   # === Prosumers ===
-  itinerary-aggregator:
-    image: itinerary-aggregator
-    build: ./itinerary-aggregator
+  trip-planner:
+    image: trip-planner
+    build: ./tripPlanner/
     depends_on:
       - api-gateway-internal
     networks:
       - soa-net
 
-  availability-coordinator:
-    image: availability-coordinator
-    build: ./availability-coordinator
+  location-availability:
+    image: location-availability
+    build: ./locationAvailability/
     depends_on:
       - api-gateway-internal
     networks:
