@@ -1,4 +1,4 @@
-package com.microsoa.itinerary.controllers;
+package com.microsoa.tripPlanner.controllers;
 
 import java.time.LocalDate;
 
