@@ -29,6 +29,7 @@ public class HomeController {
 
     System.out.println("requeste received with data: " + location + " " + date);
 
+    // This is a sample
     String result;
     if (location.equals("a")) {
 
@@ -38,6 +39,12 @@ public class HomeController {
     }
 
     model.addAttribute("message", result);
+
+    // TODO: here should be called the specific service
+    // something like this is expected:
+
+    // tripPlannerService.tripRequest(location,date)
+    // a List of results should be then returned to the client
     return "homepage";
   }
 
