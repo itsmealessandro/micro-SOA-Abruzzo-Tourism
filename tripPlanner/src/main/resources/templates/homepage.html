@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+  <body>
+    <h1>Trip Planner</h1>
+    <form  th:action="@{request}" method="post">
+      <p>Location: <input type="text" name="location" ></p>
+      <p>Date: <input type="date" name="date" ></p>
+      <input type="submit"  value="confirm">
+   </form>
+
+ <p th:if="${message}" th:text="${message}"></p>
+  </body>
