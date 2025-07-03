@@ -1,23 +1,23 @@
 # Stage 1: Build
-FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
+FROM maven:3.9.9-eclipse-temurin-21 AS build
+
 WORKDIR /app
 
-# Copia il pom.xml
+# Copia pom.xml e sorgenti
 COPY pom.xml .
+COPY src ./src
 
-# Scarica le dipendenze
-RUN mvn dependency:go-offline -B
-
-# Copia il codice sorgente mantenendo la tua struttura
-COPY java ./src/main/java
-COPY resources ./src/main/resources
-
-# Build dell'applicazione
+# Compila il progetto (senza test)
 RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jre-alpine
+
 WORKDIR /app
+
+# Copia il jar prodotto
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8082
+
+EXPOSE 8084
+
 ENTRYPOINT ["java", "-jar", "app.jar"]

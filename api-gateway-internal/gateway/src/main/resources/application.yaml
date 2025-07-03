@@ -18,22 +18,22 @@ spring:
                 - Path=/weather-api/**
 
             - id: events-service
-              uri: http://provider-events:8083
+              uri: http://provider-events:8084
               predicates:
                 - Path=/events-api/**
 
             - id: food-service
-              uri: http://provider-food:8084
+              uri: http://provider-food:8083
               predicates:
                 - Path=/food-api/**
 
-            - id: itinerary-aggregator
-              uri: http://itinerary-aggregator:8082
+            - id: locationAvailability
+              uri: http://locationAvailability
               predicates:
                 - Path=/itinerary-api/**
 
-            - id: availability-coordinator
-              uri: http://availability-coordinator:8081
+            - id: tripPlanner
+              uri: http://tripPlanner
               predicates:
                 - Path=/availability-api/**
 
