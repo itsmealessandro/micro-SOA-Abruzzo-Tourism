@@ -1,7 +1,0 @@
-com\example\providerfood\model\Restaurant.class
-com\example\providerfood\service\FoodRepository.class
-com\example\providerfood\controller\FoodController.class
-com\example\providerfood\model\LocalDish.class
-com\example\providerfood\model\CuisineType.class
-com\example\providerfood\service\FoodService.class
-com\example\providerfood\ProviderFoodApplication.class

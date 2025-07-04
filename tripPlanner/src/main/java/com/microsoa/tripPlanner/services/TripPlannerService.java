@@ -1,14 +1,11 @@
-
 package com.microsoa.tripPlanner.services;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-
-import java.util.Map;
-import java.util.HashMap;
 
 @Service
 public class TripPlannerService {
@@ -25,7 +22,7 @@ public class TripPlannerService {
         this.locationService = locationService;
     }
 
-    public CompletableFuture<Map<String, String>> planTrip(String location, String date) {
+    public CompletableFuture<Map<String, String>> planTrip(String location, LocalDate date) {
         CompletableFuture<String> eventsFuture = eventService.getEvents(location, date);
         CompletableFuture<String> foodFuture = foodService.getFood(location, date);
         CompletableFuture<String> outdoorFuture = locationService.getOutdoorInfo(location, date);
