@@ -43,11 +43,13 @@ services:
     networks:
       - soa-net
 
-  # provider-events:
-  #   image: provider-events
-  #   build: ./provider-events
-  #   networks:
-  #     - soa-net
+  provider-events:
+    image: provider-events
+    build: ./provider-events
+    ports:
+      - "8084:8084"
+    networks:
+      - soa-net
   #
   # # Optional provider for local gastronomy
   # provider-food:

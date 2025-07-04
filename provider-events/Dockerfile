@@ -1,23 +1,25 @@
 # Stage 1: Build
-FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
-WORKDIR /app
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 
-# Copia il pom.xml
-COPY pom.xml .
+# Imposto la cartella di lavoro
+WORKDIR /build
 
-# Scarica le dipendenze
-RUN mvn dependency:go-offline -B
+# Copio solo la cartella con il progetto Maven
+COPY app/provider-events ./provider-events
 
-# Copia il codice sorgente mantenendo la tua struttura
-COPY java ./src/main/java
-COPY resources ./src/main/resources
+# Entro nella directory e compilo
+WORKDIR /build/provider-events
 
-# Build dell'applicazione
-RUN mvn clean package -DskipTests
+RUN mvn clean package
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jre-alpine
+
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8082
+
+# Copio il JAR dalla build
+COPY --from=build /build/provider-events/target/provider_events-*.jar app.jar
+
+EXPOSE 8084
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
