@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.microsoa.tripPlanner.models.LocalDish; 
+
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -30,22 +33,23 @@ public class HomeController {
     public String tripRequest(@RequestParam String location,
                               @RequestParam LocalDate date,
                               Model model) {
+        System.out.println(">>> LOCATION FORM INPUT: " + location);
         try {
             // Chiamata al servizio
-            Map<String, String> tripData = tripPlannerService
-                    .planTrip(location, date)
+            Map<String, Object> tripData = tripPlannerService
+                    .planTrip(location)
                     .get();
 
             // Converto le stringhe (separate da virgole) in liste
-            List<String> events = List.of(tripData.getOrDefault("events", "").split("\\s*,\\s*"));
-            List<String> food = List.of(tripData.getOrDefault("food", "").split("\\s*,\\s*"));
-            List<String> outdoor = List.of(tripData.getOrDefault("outdoor", "").split("\\s*,\\s*"));
+            //List<String> events = List.of(tripData.getOrDefault("events", "").split("\\s*,\\s*"));
+            List<LocalDish> food = (List<LocalDish>) tripData.get("food");
+            //List<String> outdoor = List.of(tripData.getOrDefault("outdoor", "").split("\\s*,\\s*"));
 
             // Aggiungo al model per la view
-            model.addAttribute("events", events);
+            //model.addAttribute("events", events);
             model.addAttribute("food", food);
-            model.addAttribute("outdoor", outdoor);
-            model.addAttribute("message", "Ecco il tuo piano di viaggio!");
+            //model.addAttribute("outdoor", outdoor);
+            model.addAttribute("message", "Ecco i restoranti possibili!");
 
         } catch (Exception e) {
             e.printStackTrace();

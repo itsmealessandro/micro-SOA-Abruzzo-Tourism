@@ -18,7 +18,7 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copio il JAR dalla build
-COPY --from=build /build/provider-food/target/provider_food-*.jar app.jar
+COPY --from=build /build/provider-food/target/provider-food-*.jar app.jar
 
 EXPOSE 8083
 

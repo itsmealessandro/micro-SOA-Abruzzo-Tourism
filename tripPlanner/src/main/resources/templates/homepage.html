@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Home</title>
 </head>
-  <body>
+<body>
     <h1>Trip Planner</h1>
-    <form  th:action="@{request}" method="post">
-      <p>Location: <input type="text" name="location" ></p>
-      <p>Date: <input type="date" name="date" ></p>
-      <input type="submit"  value="confirm">
-   </form>
+    <form th:action="@{request}" method="post">
+        <p>Location: <input type="text" name="location" /></p>
+        <p>Date: <input type="date" name="date" /></p>
+        <input type="submit" value="Confirm" />
+    </form>
 
- <p th:if="${message}" th:text="${message}"></p>
-  </body>
+    <h3>Piatti locali consigliati:</h3>
+    <ul th:if="${food != null and !#lists.isEmpty(food)}">
+        <li th:each="piatto : ${food}">
+            <strong th:text="${piatto.name}">Nome piatto</strong><br/>
+            <span th:text="${piatto.description}">Descrizione piatto</span>
+        </li>
+    </ul>
+
+
+    <p th:if="${food == null or #lists.isEmpty(food)}">Nessun risultato disponibile.</p>
+
+    <p th:text="${message}"></p>
+</body>
+</html>
