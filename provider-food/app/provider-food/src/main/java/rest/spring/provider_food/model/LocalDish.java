@@ -1,33 +1,25 @@
 package rest.spring.provider_food.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
-@Entity
 public class LocalDish {
-    @Id
-    private String id;
     private String name;
     private String description;
-    private String region;
+    private double price;
 
     public LocalDish() {}
 
-    public LocalDish(String id, String name, String description, String region) {
-        this.id = id;
+    public LocalDish(String name, String description, double price) {
         this.name = name;
         this.description = description;
-        this.region = region;
+        this.price = price;
     }
 
-    // Getters
-    public String getId() { return id; }
+    // Getters & setters
     public String getName() { return name; }
-    public String getDescription() { return description; }
-    public String getRegion() { return region; }
-    
-    // Setters
-    public void setId(String id) { this.id = id; }
     public void setName(String name) { this.name = name; }
+
+    public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-    public void setRegion(String region) { this.region = region; }
+
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 }

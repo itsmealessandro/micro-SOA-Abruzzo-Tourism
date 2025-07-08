@@ -2,27 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Trip Planner</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        h1, h3 { color: #0056b3; }
+        form { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        form p { margin-bottom: 10px; }
+        input[type="text"], input[type="date"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 200px; }
+        input[type="submit"] { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 15px; padding: 10px; border: 1px solid #eee; border-radius: 5px; background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .restaurant-name { color: #333; font-size: 1.3em; font-weight: bold; }
+        .restaurant-location { color: #666; font-style: italic; margin-left: 10px; }
+        .menu-list { margin-top: 5px; padding-left: 20px; list-style-type: disc; }
+        .dish-item { margin-bottom: 5px; }
+        .dish-name { font-weight: bold; color: #444; }
+        .dish-description { color: #555; font-size: 0.9em; }
+        .dish-price { color: #28a745; font-weight: bold; margin-left: 10px;}
+        .message-success { color: green; font-weight: bold; margin-top: 15px; }
+        .message-error { color: red; font-weight: bold; margin-top: 15px; }
+        .no-results { color: #777; font-style: italic; margin-top: 20px; }
+    </style>
 </head>
 <body>
     <h1>Trip Planner</h1>
     <form th:action="@{request}" method="post">
-        <p>Location: <input type="text" name="location" /></p>
+        <p>Location: <input type="text" name="location" placeholder="e.g., Pescara" /></p>
         <p>Date: <input type="date" name="date" /></p>
-        <input type="submit" value="Confirm" />
+        <input type="submit" value="Conferma" />
     </form>
 
-    <h3>Piatti locali consigliati:</h3>
-    <ul th:if="${food != null and !#lists.isEmpty(food)}">
-        <li th:each="piatto : ${food}">
-            <strong th:text="${piatto.name}">Nome piatto</strong><br/>
-            <span th:text="${piatto.description}">Descrizione piatto</span>
+    <p th:if="${message}" th:text="${message}" th:classappend="${message.contains('Errore') ? 'message-error' : 'message-success'}"></p>
+
+    <h3>Ristoranti con menu locali:</h3>
+    <ul th:if="${food != null and !food.isEmpty()}">
+        <li th:each="ristorante : ${food}">
+            <div>
+                <span class="restaurant-name" th:text="${ristorante.name}"></span>
+                <span class="restaurant-location" th:text="${'(' + ristorante.location + ')'}"></span>
+                <span th:if="${ristorante.rating > 0}" style="margin-left: 15px; color: gold;">
+                    &#9733; <span th:text="${#numbers.formatDecimal(ristorante.rating, 1, 1)}"></span>
+                </span>
+            </div>
+            <ul class="menu-list">
+                <li class="dish-item" th:each="piatto : ${ristorante.menu}">
+                    <span class="dish-name" th:text="${piatto.name}"></span>: 
+                    <span class="dish-description" th:text="${piatto.description}"></span>
+                    <span class="dish-price" th:text="${'€' + #numbers.formatDecimal(piatto.price, 0, 2)}"></span>
+                </li>
+            </ul>
         </li>
     </ul>
 
-
-    <p th:if="${food == null or #lists.isEmpty(food)}">Nessun risultato disponibile.</p>
-
-    <p th:text="${message}"></p>
+    <p th:if="${food == null or food.isEmpty()}" class="no-results">Nessun risultato disponibile per la ricerca specificata.</p>
+    
 </body>
 </html>

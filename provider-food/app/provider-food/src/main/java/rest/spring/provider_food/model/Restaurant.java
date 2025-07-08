@@ -1,35 +1,41 @@
 package rest.spring.provider_food.model;
 
-import jakarta.persistence.*;
 import java.util.List;
 
-@Entity
 public class Restaurant {
-    @Id
-    private String id;
     private String name;
     private String location;
-    private double rating;
-    
-    @ElementCollection
-    private List<String> specialties;
-    
-    @Enumerated(EnumType.STRING)
-    private CuisineType cuisineType;
+    private List<String> specialties; // This list usually contains just the names of dishes
 
-    // Aggiungi un costruttore vuoto
     public Restaurant() {}
 
-    // Costruttore con parametri
-    public Restaurant(String id, String name, String location, double rating, 
-                     List<String> specialties, CuisineType cuisineType) {
-        this.id = id;
+    public Restaurant(String name, String location, List<String> specialties) {
         this.name = name;
         this.location = location;
-        this.rating = rating;
         this.specialties = specialties;
-        this.cuisineType = cuisineType;
     }
 
-    // Getters and setters...
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public List<String> getSpecialties() {
+        return specialties;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setSpecialties(List<String> specialties) {
+        this.specialties = specialties;
+    }
 }

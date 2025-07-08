@@ -1,4 +1,5 @@
-rest\spring\provider_food\service\FoodRepository.class
+rest\spring\provider_food\model\RestaurantWithMenu.class
+rest\spring\provider_food\service\FoodService$1.class
 rest\spring\provider_food\controller\FoodController.class
 rest\spring\provider_food\model\LocalDish.class
 rest\spring\provider_food\model\Restaurant.class
