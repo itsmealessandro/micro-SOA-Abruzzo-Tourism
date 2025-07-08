@@ -1,0 +1,56 @@
+[
+  {
+    "id": "e001",
+    "name": "Concerto Jazz in Piazza",
+    "location": "Pescara",
+    "description": "Una serata di musica jazz dal vivo con artisti locali.",
+    "date": "2025-07-08",
+    "time": "21:00",
+    "type": "Music"
+  },
+  {
+    "id": "e002",
+    "name": "Mostra d'Arte Moderna",
+    "location": "Pescara",
+    "description": "Esposizione di opere d'arte contemporanea al Museo d'Arte Moderna.",
+    "date": "2025-07-09",
+    "time": "10:00",
+    "type": "Art"
+  },
+  {
+    "id": "e003",
+    "name": "Sagra del Peperone",
+    "location": "Chieti",
+    "description": "Festa gastronomica dedicata al peperone, con stand e spettacoli.",
+    "date": "2025-07-08",
+    "time": "18:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e004",
+    "name": "Maratona Cittadina",
+    "location": "Pescara",
+    "description": "Gara podistica che attraversa le vie del centro storico.",
+    "date": "2025-07-08",
+    "time": "08:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e005",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Roma",
+    "description": "Mercato settimanale di oggetti d'antiquariato e vintage.",
+    "date": "2025-07-08",
+    "time": "09:00",
+    "type": "Market"
+  },
+  {
+    "id": "e006",
+    "name": "Spettacolo Teatrale",
+    "location": "Pescara",
+    "description": "Commedia brillante al Teatro Massimo.",
+    "date": "2025-07-10",
+    "time": "20:30",
+    "type": "Theater"
+  }
+]

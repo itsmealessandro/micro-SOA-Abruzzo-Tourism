@@ -1,4 +1,4 @@
-package rest.spring.provider_events.model;
+package com.microsoa.tripPlanner.models;
 
 import java.time.LocalDate;
 import java.time.LocalTime; // To store event time
@@ -9,8 +9,8 @@ public class Event {
     private String location;
     private String description;
     private LocalDate date;
-    private LocalTime time; // Added time for more detail
-    private String type; // e.g., "Concert", "Exhibition", "Festival", "Sport"
+    private LocalTime time;
+    private String type;
 
     public Event() {}
 
