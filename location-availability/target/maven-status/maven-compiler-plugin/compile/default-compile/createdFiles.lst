@@ -1,0 +1,5 @@
+com/microsoa/locationavailability/LocationAvailabilityApplication.class
+com/microsoa/locationavailability/exception/GlobalExceptionHandler.class
+com/microsoa/locationavailability/controller/AvailabilityController.class
+com/microsoa/locationavailability/model/LocationRequest.class
+com/microsoa/locationavailability/model/AvailabilityResponse.class

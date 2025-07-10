@@ -1,0 +1,12 @@
+server:
+  port: 8091
+  address: 0.0.0.0  # Accetta connessioni da qualsiasi indirizzo
+  servlet:
+    context-path: /location-availability
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator

@@ -1,0 +1,5 @@
+/home/agostino/micro-SOA-Abruzzo-Tourism/location-availability/src/main/java/com/microsoa/locationavailability/LocationAvailabilityApplication.java
+/home/agostino/micro-SOA-Abruzzo-Tourism/location-availability/src/main/java/com/microsoa/locationavailability/controller/AvailabilityController.java
+/home/agostino/micro-SOA-Abruzzo-Tourism/location-availability/src/main/java/com/microsoa/locationavailability/exception/GlobalExceptionHandler.java
+/home/agostino/micro-SOA-Abruzzo-Tourism/location-availability/src/main/java/com/microsoa/locationavailability/model/AvailabilityResponse.java
+/home/agostino/micro-SOA-Abruzzo-Tourism/location-availability/src/main/java/com/microsoa/locationavailability/model/LocationRequest.java
