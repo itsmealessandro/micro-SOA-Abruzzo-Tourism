@@ -20,6 +20,6 @@ WORKDIR /app
 # Copio il JAR dalla build
 COPY --from=build /build/provider-weather/target/provider_weather-*.jar app.jar
 
-EXPOSE 8083
+EXPOSE 8082
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

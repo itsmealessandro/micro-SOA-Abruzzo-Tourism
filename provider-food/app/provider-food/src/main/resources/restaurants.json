@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Ristorante Da Mario",
+    "location": "Pescara",
+    "specialties": ["Spaghetti alle vongole", "Fritto misto", "Brodetto alla pescarese"]
+  },
+  {
+    "name": "Trattoria Romana",
+    "location": "Roma",
+    "specialties": ["Carbonara", "Cacio e pepe", "Saltimbocca alla romana"]
+  },
+  {
+    "name": "Pizzeria Napoli",
+    "location": "Napoli",
+    "specialties": ["Pizza Margherita", "Pizza Marinara", "Calzone"]
+  },
+  {
+    "name": "Ristorante Abruzzese",
+    "location": "Chieti",
+    "specialties": ["Arrosticini", "Scrippelle 'mbusse", "Maltagliati con i fagioli"]
+  },
+  {
+    "name": "Osteria Vecchia",
+    "location": "Pescara",
+    "specialties": ["Gnocchi con sugo d'anatra", "Agnello al forno"]
+  }
+]

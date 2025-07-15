@@ -1,22 +1,25 @@
 # Stage 1: Build
-FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 
-WORKDIR /app
+# Imposto la cartella di lavoro
+WORKDIR /build
 
-# 1. Copia solo il POM per cache delle dipendenze
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
+# Copio solo la cartella con il progetto Maven
+COPY app/provider-food ./provider-food
 
-# 2. Copia i sorgenti
-COPY src ./src
+# Entro nella directory e compilo
+WORKDIR /build/provider-food
 
-# 3. Pulisci eventuali residui e compila
-RUN rm -rf /app/target && \
-    mvn clean package -DskipTests
+RUN mvn clean package
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jre-alpine
+
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8084
+
+# Copio il JAR dalla build
+COPY --from=build /build/provider-food/target/provider-food-*.jar app.jar
+
+EXPOSE 8083
+
 ENTRYPOINT ["java", "-jar", "app.jar"]

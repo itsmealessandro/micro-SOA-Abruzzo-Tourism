@@ -1,0 +1,8 @@
+rest\spring\provider_food\model\RestaurantWithMenu.class
+rest\spring\provider_food\service\FoodService$1.class
+rest\spring\provider_food\controller\FoodController.class
+rest\spring\provider_food\model\LocalDish.class
+rest\spring\provider_food\model\Restaurant.class
+rest\spring\provider_food\service\FoodService.class
+rest\spring\provider_food\model\CuisineType.class
+rest\spring\provider_food\ProviderFoodApplication.class
