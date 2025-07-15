@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Controller
 @RequestMapping("/")
 public class HomeController {
@@ -52,16 +55,29 @@ public class HomeController {
     formParams.add("location", location);
     formParams.add("date", date.toString());
 
-    // No headers explicitly set here
     ResponseEntity<String> response = restTemplate.postForEntity(url, formParams, String.class);
 
     if (response.getStatusCode().is2xxSuccessful()) {
-      model.addAttribute("messageSuccess", "Richiesta inviata con successo!");
-      model.addAttribute("responseBody", response.getBody());
-      return "tripResultPage";
+      try {
+        // ObjectMapper per convertire la stringa JSON in una mappa
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> responseData = objectMapper.readValue(response.getBody(), new TypeReference<>() {
+        });
+
+        model.addAttribute("messageSuccess", responseData.get("message"));
+        model.addAttribute("food", responseData.get("food"));
+        model.addAttribute("events", responseData.get("events"));
+        model.addAttribute("requestedLocation", responseData.get("requestedLocation"));
+        model.addAttribute("requestedDate", responseData.get("requestedDate"));
+      } catch (Exception e) {
+        logger.error("Errore durante il parsing della risposta JSON: {}", e.getMessage(), e);
+        model.addAttribute("messageError", "Errore nella lettura della risposta dal trip-planner.");
+      }
+
+      return "homepage";
     } else {
       model.addAttribute("messageError", "Errore nella richiesta al trip-planner");
-      return "tripResultPage";
+      return "homepage";
     }
   }
 }
