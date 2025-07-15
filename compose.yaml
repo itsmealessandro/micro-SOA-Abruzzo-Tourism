@@ -13,6 +13,8 @@ services:
   trip-planner:
     image: trip-planner
     build: ./tripPlanner/
+    ports:
+      - "8090:8090"
     depends_on:
       - api-gateway-internal
     networks:
@@ -43,12 +45,14 @@ services:
     networks:
       - soa-net
 
-  # provider-events:
-  #   image: provider-events
-  #   build: ./provider-events
-  #   networks:
-  #     - soa-net
-  #
+  provider-events:
+    image: provider-events
+    build: ./provider-events
+    ports:
+      - "8084:8084"
+    networks:
+      - soa-net
+  
   # # Optional provider for local gastronomy
   # provider-food:
   #   image: provider-food
