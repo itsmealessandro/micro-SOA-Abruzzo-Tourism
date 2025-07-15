@@ -9,6 +9,19 @@ services:
     networks:
       - soa-net
 
+  client-gui:
+    env_file:
+      - .env
+    image: client-gui
+    build:
+      context: ./clientGui/
+      args:
+        CLIENT_APP_PORT: ${CLIENT_APP_PORT}
+    ports:
+      - "${CLIENT_APP_PORT}:${CLIENT_APP_PORT}"
+    networks:
+      - soa-net
+
   # === Prosumers ===
   trip-planner:
     image: trip-planner
