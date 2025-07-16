@@ -4,6 +4,7 @@ public class Trail {
 
   private String name;
   private String location;
+  WeatherAdaptability weatherAdaptability;
 
   public String getName() {
     return name;
@@ -19,6 +20,21 @@ public class Trail {
 
   public void setLocation(String location) {
     this.location = location;
+  }
+
+  public WeatherAdaptability getWeatherAdaptability() {
+    return weatherAdaptability;
+  }
+
+  public void setWeatherAdaptability(WeatherAdaptability weatherAdaptability) {
+    this.weatherAdaptability = weatherAdaptability;
+  }
+
+  @Override
+  public String toString() {
+    return "Trail [name=" + name + ", location=" + location + ", weatherAdaptability=" + weatherAdaptability
+        + ", getName()=" + getName() + ", getLocation()=" + getLocation() + ", getWeatherAdaptability()="
+        + getWeatherAdaptability() + "]";
   }
 
 }
