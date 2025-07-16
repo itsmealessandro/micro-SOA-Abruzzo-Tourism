@@ -1,14 +1,10 @@
 package com.soa.clientGui.controllers;
 
-import java.net.http.HttpHeaders;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.soa.clientGui.model.TripPlannerResponseDTO;
 
 @Controller
 @RequestMapping("/")
@@ -55,20 +51,34 @@ public class HomeController {
     formParams.add("location", location);
     formParams.add("date", date.toString());
 
+    System.out.println("###################################################################");
+    System.out.println("Preparing POST to send...");
+    System.out.println("###################################################################");
+
     ResponseEntity<String> response = restTemplate.postForEntity(url, formParams, String.class);
+
+    System.out.println("###################################################################");
+    System.out.println("Response Received:");
+    System.out.println(response.toString());
+    System.out.println("###################################################################");
 
     if (response.getStatusCode().is2xxSuccessful()) {
       try {
-        // ObjectMapper per convertire la stringa JSON in una mappa
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> responseData = objectMapper.readValue(response.getBody(), new TypeReference<>() {
-        });
 
-        model.addAttribute("messageSuccess", responseData.get("message"));
-        model.addAttribute("food", responseData.get("food"));
-        model.addAttribute("events", responseData.get("events"));
-        model.addAttribute("requestedLocation", responseData.get("requestedLocation"));
-        model.addAttribute("requestedDate", responseData.get("requestedDate"));
+        ObjectMapper objectMapper = new ObjectMapper();
+        TripPlannerResponseDTO responseDTO = objectMapper.readValue(response.getBody(), TripPlannerResponseDTO.class);
+
+        System.out.println("########################################################################");
+
+        System.out.println(responseDTO);
+        System.out.println("########################################################################");
+
+        model.addAttribute("messageSuccess", responseDTO.getMessage());
+        model.addAttribute("food", responseDTO.getFood());
+        model.addAttribute("events", responseDTO.getEvents());
+        model.addAttribute("requestedLocation", responseDTO.getRequestedLocation());
+        model.addAttribute("requestedDate", date);
+        model.addAttribute("trailsAvailability", responseDTO.getTrailsAvailability()); // TODO: set data values on HTML
       } catch (Exception e) {
         logger.error("Errore durante il parsing della risposta JSON: {}", e.getMessage(), e);
         model.addAttribute("messageError", "Errore nella lettura della risposta dal trip-planner.");
