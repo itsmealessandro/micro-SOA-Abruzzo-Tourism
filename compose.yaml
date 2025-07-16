@@ -2,25 +2,44 @@ services:
 
   # === Internal API Gateway ===
   api-gateway-internal:
+    env_file:
+      - .env
     image: api-gateway-internal
     build: ./api-gateway-internal
     ports:
-      - "8080:8080"  # Internal gateway
+      - "${API_GATEWAY_INTERNAL_PORT:-8080}:${API_GATEWAY_INTERNAL_PORT:-8080}" # Internal gateway
+    networks:
+      - soa-net
+
+  client-gui:
+    env_file:
+      - .env
+    image: client-gui
+    build:
+      context: ./clientGui/
+      args:
+        CLIENT_APP_PORT: ${CLIENT_APP_PORT}
+    ports:
+      - "${CLIENT_APP_PORT}:${CLIENT_APP_PORT}"
     networks:
       - soa-net
 
   # === Prosumers ===
   trip-planner:
+    env_file:
+      - .env
     image: trip-planner
     build: ./tripPlanner/
     ports:
-      - "8090:8090"
+      - "${TRIP_PLANNER_PORT:-8090}:${TRIP_PLANNER_PORT:-8090}"
     depends_on:
       - api-gateway-internal
     networks:
       - soa-net
 
   location-availability:
+    env_file:
+      - .env
     image: location-availability
     build: ./locationAvailability/
     depends_on:
@@ -30,47 +49,48 @@ services:
 
   # === Providers ===
   provider-trails:
+    env_file:
+      - .env
     image: provider-trails
     build: ./provider-trails
     ports:
-      - "8081:8081"
+      - "${PROVIDER_TRAILS_PORT:-8081}:${PROVIDER_TRAILS_PORT:-8081}"
     networks:
       - soa-net
 
   provider-weather:
+    env_file:
+      - .env
     image: provider-weather
     build: ./provider-weather
     ports:
-      - "8082:8082"
+      - "${PROVIDER_WEATHER_PORT:-8082}:${PROVIDER_WEATHER_PORT:-8082}"
     networks:
       - soa-net
 
   provider-events:
+    env_file:
+      - .env
     image: provider-events
     build: ./provider-events
     ports:
-      - "8084:8084"
+      - "${PROVIDER_EVENTS_PORT:-8084}:${PROVIDER_EVENTS_PORT:-8084}"
     networks:
       - soa-net
-  
-  # # Optional provider for local gastronomy
-  # provider-food:
-  #   image: provider-food
-  #   build: ./provider-food
-  #   networks:
-  #     - soa-net
 
   provider-food:
+    env_file:
+      - .env
     image: provider-food
     build: ./provider-food
     ports:
-      - "8083:8083"
+      - "${PROVIDER_FOOD_PORT:-8083}:${PROVIDER_FOOD_PORT:-8083}"
     networks:
       - soa-net
     environment:
       SPRING_PROFILES_ACTIVE: default
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8083/food-api/actuator/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:${PROVIDER_FOOD_PORT:-8083}/food-api/actuator/health"]
       interval: 30s
       timeout: 5s
       retries: 3
