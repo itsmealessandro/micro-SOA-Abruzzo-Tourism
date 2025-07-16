@@ -2,7 +2,6 @@ package com.soa.clientGui.model;
 
 import java.util.List;
 
-import com.soa.clientGui.model.food.Event;
 import com.soa.clientGui.model.food.Restaurant;
 
 public class TripPlannerResponseDTO {

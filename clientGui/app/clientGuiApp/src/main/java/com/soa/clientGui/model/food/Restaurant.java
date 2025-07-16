@@ -67,4 +67,12 @@ public class Restaurant {
     this.menu = menu;
   }
 
+  @Override
+  public String toString() {
+    return "Restaurant [name=" + name + ", location=" + location + ", rating=" + rating + ", specialties=" + specialties
+        + ", cuisineType=" + cuisineType + ", menu=" + menu + ", getId()=" + getId() + ", getName()=" + getName()
+        + ", getLocation()=" + getLocation() + ", getRating()=" + getRating() + ", getSpecialties()=" + getSpecialties()
+        + ", getCuisineType()=" + getCuisineType() + ", getMenu()=" + getMenu() + "]";
+  }
+
 }

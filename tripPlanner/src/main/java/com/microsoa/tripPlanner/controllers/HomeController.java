@@ -1,13 +1,15 @@
 package com.microsoa.tripPlanner.controllers;
 
 import com.microsoa.tripPlanner.models.RestaurantWithMenu;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoa.tripPlanner.models.Event; // NEW IMPORT
 import com.microsoa.tripPlanner.services.TripPlannerService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -18,21 +20,22 @@ import java.util.concurrent.CompletableFuture;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/* INFO:
+ * This Controller is responsible for receiving a request from the client web application
+ * and return to him the data in a JSON file
+ * */
 @Controller
 @RequestMapping("/")
 public class HomeController {
 
   private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+  @Autowired
+  private ObjectMapper objectMapper;
 
   private final TripPlannerService tripPlannerService;
 
   public HomeController(TripPlannerService tripPlannerService) {
     this.tripPlannerService = tripPlannerService;
-  }
-
-  @GetMapping("/home")
-  public String showHome() {
-    return "homepage";
   }
 
   @PostMapping("/request")
@@ -47,8 +50,15 @@ public class HomeController {
 
   private ResponseEntity<Map<String, Object>> handleSuccess(Map<String, Object> tripData, String location,
       LocalDate date) {
-    List<RestaurantWithMenu> food = (List<RestaurantWithMenu>) tripData.get("food");
-    List<Event> events = (List<Event>) tripData.get("events");
+    List<RestaurantWithMenu> food = objectMapper.convertValue(
+        tripData.get("food"),
+        new TypeReference<List<RestaurantWithMenu>>() {
+        });
+
+    List<Event> events = objectMapper.convertValue(
+        tripData.get("events"),
+        new TypeReference<List<Event>>() {
+        });
 
     Map<String, Object> response = new HashMap<>();
     response.put("food", food);

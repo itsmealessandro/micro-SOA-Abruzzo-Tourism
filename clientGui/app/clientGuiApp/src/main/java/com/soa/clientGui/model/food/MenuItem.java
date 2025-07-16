@@ -29,4 +29,10 @@ public class MenuItem {
     this.price = price;
   }
 
+  @Override
+  public String toString() {
+    return "MenuItem [name=" + name + ", description=" + description + ", price=" + price + ", getName()=" + getName()
+        + ", getDescription()=" + getDescription() + ", getPrice()=" + getPrice() + "]";
+  }
+
 }
