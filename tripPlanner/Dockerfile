@@ -1,6 +1,9 @@
 # Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
+ARG TRIP_PLANNER_PORT
+RUN echo "TRIP_PLANNER_PORT is: ${TRIP_PLANNER_PORT:-NOT SET}"
+
 WORKDIR /app
 
 # Copy pom.xml and source code
@@ -17,6 +20,5 @@ WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
 
-EXPOSE 8090
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
