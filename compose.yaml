@@ -5,7 +5,10 @@ services:
     env_file:
       - .env
     image: api-gateway-internal
-    build: ./api-gateway-internal
+    build:
+      context: ./api-gateway-internal
+      args:
+        API_GATEWAY_INTERNAL_PORT: ${API_GATEWAY_INTERNAL_PORT}
     ports:
       - "${API_GATEWAY_INTERNAL_PORT:-8080}:${API_GATEWAY_INTERNAL_PORT:-8080}" # Internal gateway
     networks:
@@ -29,7 +32,11 @@ services:
     env_file:
       - .env
     image: trip-planner
-    build: ./tripPlanner/
+    build: 
+        context: ./tripPlanner/
+        args: 
+          TRIP_PLANNER_PORT: ${TRIP_PLANNER_PORT}
+
     ports:
       - "${TRIP_PLANNER_PORT:-8090}:${TRIP_PLANNER_PORT:-8090}"
     depends_on:
@@ -52,7 +59,10 @@ services:
     env_file:
       - .env
     image: provider-trails
-    build: ./provider-trails
+    build:
+      context: ./provider-trails
+      args:
+        PROVIDER_TRAILS_PORT: ${PROVIDER_TRAILS_PORT}
     ports:
       - "${PROVIDER_TRAILS_PORT:-8081}:${PROVIDER_TRAILS_PORT:-8081}"
     networks:
@@ -62,7 +72,10 @@ services:
     env_file:
       - .env
     image: provider-weather
-    build: ./provider-weather
+    build:
+      context: ./provider-weather
+      args:
+        PROVIDER_WEATHER_PORT: ${PROVIDER_WEATHER_PORT}
     ports:
       - "${PROVIDER_WEATHER_PORT:-8082}:${PROVIDER_WEATHER_PORT:-8082}"
     networks:
@@ -72,7 +85,10 @@ services:
     env_file:
       - .env
     image: provider-events
-    build: ./provider-events
+    build:
+      context: ./provider-events
+      args:
+        PROVIDER_EVENTS_PORT: ${PROVIDER_EVENTS_PORT}
     ports:
       - "${PROVIDER_EVENTS_PORT:-8084}:${PROVIDER_EVENTS_PORT:-8084}"
     networks:
@@ -82,7 +98,10 @@ services:
     env_file:
       - .env
     image: provider-food
-    build: ./provider-food
+    build:
+      context: ./provider-food
+      args:
+        PROVIDER_FOOD_PORT: ${PROVIDER_FOOD_PORT}
     ports:
       - "${PROVIDER_FOOD_PORT:-8083}:${PROVIDER_FOOD_PORT:-8083}"
     networks:

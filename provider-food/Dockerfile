@@ -1,6 +1,9 @@
 # Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
+ARG PROVIDER_FOOD_PORT
+RUN echo "PROVIDER_FOOD_PORT is: ${PROVIDER_FOOD_PORT:-NOT SET}"
+
 # Imposto la cartella di lavoro
 WORKDIR /build
 
@@ -20,6 +23,5 @@ WORKDIR /app
 # Copio il JAR dalla build
 COPY --from=build /build/provider-food/target/provider-food-*.jar app.jar
 
-EXPOSE 8083
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

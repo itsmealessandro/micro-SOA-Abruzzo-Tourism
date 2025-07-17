@@ -1,6 +1,9 @@
 # Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
+ARG PROVIDER_TRAILS_PORT
+RUN echo "PROVIDER_TRAILS_PORT is: ${PROVIDER_TRAILS_PORT:-NOT SET}"
+
 # Imposto la cartella di lavoro
 WORKDIR /build
 
@@ -20,6 +23,5 @@ WORKDIR /app
 # Copio il JAR dalla build
 COPY --from=build /build/provider-trails/target/provider_trails-*.jar app.jar
 
-EXPOSE 8081
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
