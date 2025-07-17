@@ -39,7 +39,8 @@
         <input type="submit" value="Conferma" />
     </form>
 
-    <p th:if="${message}" th:text="${message}" th:classappend="${message.contains('Errore') ? 'message-error' : 'message-success'}"></p>
+    <p th:if="${messageSuccess}" th:text="${messageSuccess}" class="message-success"></p>
+    <p th:if="${messageError}" th:text="${messageError}" class="message-error"></p>
 
     <div class="results-section">
         <div class="column">
