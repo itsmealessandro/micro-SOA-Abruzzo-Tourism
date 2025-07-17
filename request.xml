@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:weat="http://services.provider_weather.spring.rest/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <weat:getWeatherForecast>
+         <location>Sulmona</location>
+         <date>2023-05-01</date>
+      </weat:getWeatherForecast>
+   </soapenv:Body>
+</soapenv:Envelope>

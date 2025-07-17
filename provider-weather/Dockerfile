@@ -1,25 +1,27 @@
 # Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
-# Imposto la cartella di lavoro
 WORKDIR /build
 
-# Copio solo la cartella con il progetto Maven
-COPY app/provider-weather ./provider-weather
+# Copia solo i file necessari per la compilazione
+COPY app/provider-weather/pom.xml ./provider-weather/
+COPY app/provider-weather/src ./provider-weather/src/
 
 # Entro nella directory e compilo
 WORKDIR /build/provider-weather
 
-RUN mvn clean package
+# Build con caching delle dipendenze
+RUN mvn dependency:go-offline
+RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-# Copio il JAR dalla build
-COPY --from=build /build/provider-weather/target/provider_weather-*.jar app.jar
+# Copio il JAR dalla build (con nome fisso)
+COPY --from=build /build/provider-weather/target/provider-weather-*.jar ./app.jar
 
 EXPOSE 8082
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--server.port=8082"]

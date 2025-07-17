@@ -41,9 +41,13 @@ services:
     env_file:
       - .env
     image: location-availability
-    build: ./locationAvailability/
+    build: ./prosumer-location-availability
+    ports:
+      - "8091:8091"
     depends_on:
       - api-gateway-internal
+      - provider-trails
+      - provider-weather
     networks:
       - soa-net
 

@@ -1,52 +1,68 @@
 package rest.spring.provider_trails.services;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Service;
 
+import jakarta.annotation.PostConstruct;
 import rest.spring.provider_trails.model.Trail;
 import rest.spring.provider_trails.model.WeatherAdaptability;
 
 @Service
 public class TrialServiceImpl implements TrialService {
+    
+    private final Map<String, Trail> trailsDatabase = new ConcurrentHashMap<>();
+    
+    @PostConstruct
+    public void init() {
+        // Dati di esempio per i borghi abruzzesi
+        List<String> features1 = Arrays.asList("panoramico", "storico", "familiare");
+        Trail trail1 = new Trail("T1", "Sentiero del Lupo", "Roccascalegna", 8.5, 3, features1);
+        trail1.setWeatherAdaptability(new WeatherAdaptability(true, "Ottime condizioni", "Ideale per trekking"));
+        
+        List<String> features2 = Arrays.asList("archeologico", "culturale", "difficile");
+        Trail trail2 = new Trail("T2", "Via dei Templi", "Sulmona", 12.0, 4, features2);
+        trail2.setWeatherAdaptability(new WeatherAdaptability(false, "Pioggia prevista", "Rinviare a condizioni migliori"));
+        
+        List<String> features3 = Arrays.asList("lacustre", "naturale", "facile");
+        Trail trail3 = new Trail("T3", "Lago di Scanno", "Scanno", 5.0, 2, features3);
+        trail3.setWeatherAdaptability(new WeatherAdaptability(true, "Cielo sereno", "Perfetto per famiglie"));
+        
+        trailsDatabase.put(trail1.getId(), trail1);
+        trailsDatabase.put(trail2.getId(), trail2);
+        trailsDatabase.put(trail3.getId(), trail3);
+    }
 
-  @Override
-  public Set<Trail> getAllTrails() {
-    Set<Trail> trails = new HashSet<>();
+    @Override
+    public List<Trail> getTrailsByLocation(String location) {
+        List<Trail> result = new ArrayList<>();
+        for (Trail trail : trailsDatabase.values()) {
+            if (trail.getLocation().equalsIgnoreCase(location)) {
+                result.add(trail);
+            }
+        }
+        return result;
+    }
 
-    Trail trail1 = new Trail();
-    trail1.setName("Gran Sasso Loop");
-    trail1.setLocation("Gran Sasso");
-    trail1.setWeatherAdaptability(WeatherAdaptability.COPERTO);
+    @Override
+    public Trail getTrailById(String id) {
+        return trailsDatabase.get(id);
+    }
 
-    Trail trail2 = new Trail();
-    trail2.setName("Campo Imperatore Ridge");
-    trail2.setLocation("Campo Imperatore");
-    trail2.setWeatherAdaptability(WeatherAdaptability.FANGOSO);
-
-    Trail trail3 = new Trail();
-    trail3.setName("Majella Trail");
-    trail3.setLocation("Majella National Park");
-    trail3.setWeatherAdaptability(WeatherAdaptability.ESPOSTO);
-
-    Trail trail4 = new Trail();
-    trail4.setName("Sirente Ring");
-    trail4.setLocation("Sirente-Velino");
-    trail4.setWeatherAdaptability(WeatherAdaptability.INVERNALE);
-
-    Trail trail5 = new Trail();
-    trail5.setName("Lake Campotosto Path");
-    trail5.setLocation("Campotosto");
-    trail5.setWeatherAdaptability(WeatherAdaptability.COPERTO);
-
-    trails.add(trail1);
-    trails.add(trail2);
-    trails.add(trail3);
-    trails.add(trail4);
-    trails.add(trail5);
-
-    return trails;
-  }
-
+    @Override
+    public void updateWeatherAdaptability(String trailId, boolean suitable, String reason, String recommendation) {
+        Trail trail = trailsDatabase.get(trailId);
+        if (trail != null) {
+            trail.setWeatherAdaptability(new WeatherAdaptability(suitable, reason, recommendation));
+        }
+    }
+    
+    @Override
+    public List<Trail> getAllTrails() {
+        return new ArrayList<>(trailsDatabase.values());
+    }
 }
