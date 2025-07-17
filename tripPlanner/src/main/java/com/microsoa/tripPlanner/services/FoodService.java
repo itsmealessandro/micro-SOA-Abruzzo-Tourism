@@ -7,8 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.client.RestClientException; // New import for error handling
-
+import org.springframework.web.client.RestClientException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import org.slf4j.Logger;
@@ -19,16 +18,27 @@ public class FoodService {
 
     private static final Logger logger = LoggerFactory.getLogger(FoodService.class);
 
-    // Inject RestTemplate instead of creating new instance
     private final RestTemplate restTemplate;
-    // URL should ideally be in application.properties
-    private static final String FOOD_URL = "http://provider-food:8083/food/restaurants-with-menu?location={location}"; // Using localhost for testing. Replace with "http://provider-food:8083" for Docker/K8s.
+
+    // *** MODIFICA QUI: L'URL PUNTA AL GATEWAY ***
+    // L'URL dovrebbe essere: Gateway_Base_URL + Predicate_Path_for_Food + Specific_Food_Endpoint
+    // Basandoci sulla tua configurazione del Gateway: /food-api/**
+    private static final String FOOD_API_BASE_PATH = "/food-api"; // Il prefisso configurato nel Gateway
+    private static final String FOOD_SERVICE_ENDPOINT = "/food/restaurants-with-menu"; // L'endpoint del provider-food
+
+    // Costruisci l'URL completo che passa attraverso il Gateway
+    // Se tripPlanner e api-gateway-internal sono nella stessa rete Docker, usa il nome del servizio del gateway.
+    // Altrimenti, se stai testando in locale e api-gateway-internal è su localhost:8080, usa "http://localhost:8080"
+    private static final String GATEWAY_BASE_URL = "http://api-gateway-internal:8080"; // Esempio per Docker Compose
+
+
+    private static final String FOOD_URL = GATEWAY_BASE_URL + FOOD_API_BASE_PATH + FOOD_SERVICE_ENDPOINT + "?location={location}";
 
     public FoodService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    @Async // Makes this method run in a separate thread, freeing the calling thread
+    @Async
     public CompletableFuture<List<RestaurantWithMenu>> getRestaurantsWithMenu(String location) {
         logger.info("Attempting to fetch restaurants for location: {} from {}", location, FOOD_URL);
         try {
@@ -50,7 +60,6 @@ public class FoodService {
 
         } catch (RestClientException e) {
             logger.error("Error fetching restaurants from {}: {}", FOOD_URL, e.getMessage(), e);
-            // Return a CompletableFuture completed exceptionally
             return CompletableFuture.failedFuture(new RuntimeException("Failed to fetch food data: " + e.getMessage(), e));
         } catch (Exception e) {
             logger.error("An unexpected error occurred while fetching restaurants: {}", e.getMessage(), e);
