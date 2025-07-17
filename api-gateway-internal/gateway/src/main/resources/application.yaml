@@ -42,6 +42,14 @@ spring:
               filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
                 - RewritePath=/availability-api/(?<segment>.*), /${segment} # Rimuove /availability-api/ dal percorso
 
+            - id: trip-planner-api # Nuovo ID per la rotta specifica del trip-planner
+              uri: http://trip-planner:${TRIP_PLANNER_PORT}
+              predicates:
+                - Path=/trip-planner-api/** # Il prefisso che il client-gui userà per chiamare il trip-planner
+              filters:
+                - RewritePath=/trip-planner-api/(?<segment>.*), /${segment} # Rimuove /trip-planner-api/ prima di inoltrare a trip-planner
+
+
             # Rotta per il servizio tripPlanner (il tuo frontend web)
             # QUESTA È LA ROTTA PIÙ GENERICA E DEVE ESSERE L'ULTIMA NELLA LISTA
             - id: tripPlanner
