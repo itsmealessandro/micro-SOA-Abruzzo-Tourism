@@ -1,6 +1,9 @@
 # Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
+ARG AVAILIBALITY_LOCATION_PORT
+RUN echo "AVAILIBALITY_LOCATION_PORT is: ${AVAILIBALITY_LOCATION_PORT:-NOT SET}"
+
 WORKDIR /app
 
 # Copy pom.xml and source code
