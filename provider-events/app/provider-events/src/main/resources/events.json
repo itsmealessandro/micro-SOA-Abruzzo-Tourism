@@ -1,56 +1,1802 @@
 [
   {
     "id": "e001",
-    "name": "Concerto Jazz in Piazza",
-    "location": "Pescara",
-    "description": "Una serata di musica jazz dal vivo con artisti locali.",
-    "date": "2025-07-08",
-    "time": "21:00",
-    "type": "Music"
+    "name": "Serata Cinema d'Autore",
+    "location": "Chieti",
+    "description": "Evento dedicato a cinema nella città di Chieti.",
+    "date": "2025-07-21",
+    "time": "20:30",
+    "type": "Cinema"
   },
   {
     "id": "e002",
-    "name": "Mostra d'Arte Moderna",
-    "location": "Pescara",
-    "description": "Esposizione di opere d'arte contemporanea al Museo d'Arte Moderna.",
+    "name": "Maratona Cittadina",
+    "location": "Napoli",
+    "description": "Evento dedicato a sport nella città di Napoli.",
+    "date": "2025-08-02",
+    "time": "20:30",
+    "type": "Sport"
+  },
+  {
+    "id": "e003",
+    "name": "Serata Jazz",
+    "location": "Roma",
+    "description": "Evento dedicato a music nella città di Roma.",
+    "date": "2025-07-22",
+    "time": "18:00",
+    "type": "Music"
+  },
+  {
+    "id": "e004",
+    "name": "Corso di Fotografia",
+    "location": "Palermo",
+    "description": "Evento dedicato a workshop nella città di Palermo.",
     "date": "2025-07-09",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e005",
+    "name": "Sagra della Pizza",
+    "location": "Palermo",
+    "description": "Evento dedicato a food festival nella città di Palermo.",
+    "date": "2025-07-21",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e006",
+    "name": "Installazioni Contemporanee",
+    "location": "Firenze",
+    "description": "Evento dedicato a art nella città di Firenze.",
+    "date": "2025-08-21",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e007",
+    "name": "Workshop di Pittura",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-07-13",
+    "time": "09:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e008",
+    "name": "Cinema all'Aperto",
+    "location": "Firenze",
+    "description": "Evento dedicato a cinema nella città di Firenze.",
+    "date": "2025-08-19",
+    "time": "09:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e009",
+    "name": "Corso di Fotografia",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-07-21",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e010",
+    "name": "Fiera dell'Artigianato",
+    "location": "Napoli",
+    "description": "Evento dedicato a market nella città di Napoli.",
+    "date": "2025-08-27",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e011",
+    "name": "Street Food Party",
+    "location": "Roma",
+    "description": "Evento dedicato a food festival nella città di Roma.",
+    "date": "2025-08-10",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e012",
+    "name": "Serata Cinema d'Autore",
+    "location": "Torino",
+    "description": "Evento dedicato a cinema nella città di Torino.",
+    "date": "2025-08-29",
+    "time": "09:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e013",
+    "name": "Esposizione Arte Moderna",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-07-23",
     "time": "10:00",
     "type": "Art"
   },
   {
-    "id": "e003",
-    "name": "Sagra del Peperone",
+    "id": "e014",
+    "name": "Laboratorio Creativo",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-08-04",
+    "time": "15:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e015",
+    "name": "Opera Lirica",
+    "location": "Bologna",
+    "description": "Evento dedicato a theater nella città di Bologna.",
+    "date": "2025-07-22",
+    "time": "09:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e016",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Pescara",
+    "description": "Evento dedicato a theater nella città di Pescara.",
+    "date": "2025-08-30",
+    "time": "21:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e017",
+    "name": "Cinema all'Aperto",
+    "location": "Bari",
+    "description": "Evento dedicato a cinema nella città di Bari.",
+    "date": "2025-08-17",
+    "time": "18:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e018",
+    "name": "Corso di Fotografia",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-07-26",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e019",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Bologna",
+    "description": "Evento dedicato a market nella città di Bologna.",
+    "date": "2025-07-13",
+    "time": "20:30",
+    "type": "Market"
+  },
+  {
+    "id": "e020",
+    "name": "Live DJ Set",
+    "location": "Napoli",
+    "description": "Evento dedicato a music nella città di Napoli.",
+    "date": "2025-08-06",
+    "time": "15:00",
+    "type": "Music"
+  },
+  {
+    "id": "e021",
+    "name": "Live DJ Set",
+    "location": "Bari",
+    "description": "Evento dedicato a music nella città di Bari.",
+    "date": "2025-07-11",
+    "time": "09:00",
+    "type": "Music"
+  },
+  {
+    "id": "e022",
+    "name": "Installazioni Contemporanee",
+    "location": "Roma",
+    "description": "Evento dedicato a art nella città di Roma.",
+    "date": "2025-07-02",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e023",
+    "name": "Mercatino Vintage",
+    "location": "Torino",
+    "description": "Evento dedicato a market nella città di Torino.",
+    "date": "2025-07-23",
+    "time": "08:00",
+    "type": "Market"
+  },
+  {
+    "id": "e024",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Palermo",
+    "description": "Evento dedicato a market nella città di Palermo.",
+    "date": "2025-08-13",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e025",
+    "name": "Workshop di Pittura",
     "location": "Chieti",
-    "description": "Festa gastronomica dedicata al peperone, con stand e spettacoli.",
-    "date": "2025-07-08",
+    "description": "Evento dedicato a workshop nella città di Chieti.",
+    "date": "2025-08-28",
+    "time": "18:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e026",
+    "name": "Mercatino Vintage",
+    "location": "Pescara",
+    "description": "Evento dedicato a market nella città di Pescara.",
+    "date": "2025-08-24",
+    "time": "21:00",
+    "type": "Market"
+  },
+  {
+    "id": "e027",
+    "name": "Mostra di Fotografia",
+    "location": "Bari",
+    "description": "Evento dedicato a art nella città di Bari.",
+    "date": "2025-07-27",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e028",
+    "name": "Commedia Brillante",
+    "location": "Napoli",
+    "description": "Evento dedicato a theater nella città di Napoli.",
+    "date": "2025-08-21",
+    "time": "08:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e029",
+    "name": "Torneo di Calcio",
+    "location": "Bari",
+    "description": "Evento dedicato a sport nella città di Bari.",
+    "date": "2025-08-11",
+    "time": "21:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e030",
+    "name": "Mercatino Vintage",
+    "location": "Torino",
+    "description": "Evento dedicato a market nella città di Torino.",
+    "date": "2025-08-17",
+    "time": "20:30",
+    "type": "Market"
+  },
+  {
+    "id": "e031",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Napoli",
+    "description": "Evento dedicato a theater nella città di Napoli.",
+    "date": "2025-08-21",
+    "time": "09:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e032",
+    "name": "Installazioni Contemporanee",
+    "location": "Napoli",
+    "description": "Evento dedicato a art nella città di Napoli.",
+    "date": "2025-08-03",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e033",
+    "name": "Cinema all'Aperto",
+    "location": "Pescara",
+    "description": "Evento dedicato a cinema nella città di Pescara.",
+    "date": "2025-08-02",
+    "time": "08:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e034",
+    "name": "Street Food Party",
+    "location": "Palermo",
+    "description": "Evento dedicato a food festival nella città di Palermo.",
+    "date": "2025-08-20",
+    "time": "20:30",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e035",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Bari",
+    "description": "Evento dedicato a market nella città di Bari.",
+    "date": "2025-08-18",
+    "time": "08:00",
+    "type": "Market"
+  },
+  {
+    "id": "e036",
+    "name": "Installazioni Contemporanee",
+    "location": "Roma",
+    "description": "Evento dedicato a art nella città di Roma.",
+    "date": "2025-07-09",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e037",
+    "name": "Esposizione Arte Moderna",
+    "location": "Chieti",
+    "description": "Evento dedicato a art nella città di Chieti.",
+    "date": "2025-08-09",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e038",
+    "name": "Proiezione Film Cult",
+    "location": "Firenze",
+    "description": "Evento dedicato a cinema nella città di Firenze.",
+    "date": "2025-08-27",
+    "time": "20:30",
+    "type": "Cinema"
+  },
+  {
+    "id": "e039",
+    "name": "Maratona Cittadina",
+    "location": "Milano",
+    "description": "Evento dedicato a sport nella città di Milano.",
+    "date": "2025-08-31",
+    "time": "15:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e040",
+    "name": "Laboratorio Creativo",
+    "location": "Napoli",
+    "description": "Evento dedicato a workshop nella città di Napoli.",
+    "date": "2025-08-15",
+    "time": "18:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e041",
+    "name": "Fiera dell'Artigianato",
+    "location": "Roma",
+    "description": "Evento dedicato a market nella città di Roma.",
+    "date": "2025-08-10",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e042",
+    "name": "Opera Lirica",
+    "location": "Firenze",
+    "description": "Evento dedicato a theater nella città di Firenze.",
+    "date": "2025-08-01",
+    "time": "09:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e043",
+    "name": "Corso di Fotografia",
+    "location": "Bari",
+    "description": "Evento dedicato a workshop nella città di Bari.",
+    "date": "2025-07-24",
+    "time": "10:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e044",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Milano",
+    "description": "Evento dedicato a theater nella città di Milano.",
+    "date": "2025-07-17",
+    "time": "08:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e045",
+    "name": "Street Food Party",
+    "location": "Milano",
+    "description": "Evento dedicato a food festival nella città di Milano.",
+    "date": "2025-08-05",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e046",
+    "name": "Workshop di Pittura",
+    "location": "Bologna",
+    "description": "Evento dedicato a workshop nella città di Bologna.",
+    "date": "2025-07-25",
+    "time": "08:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e047",
+    "name": "Street Food Party",
+    "location": "Napoli",
+    "description": "Evento dedicato a food festival nella città di Napoli.",
+    "date": "2025-07-30",
+    "time": "15:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e048",
+    "name": "Proiezione Film Cult",
+    "location": "Napoli",
+    "description": "Evento dedicato a cinema nella città di Napoli.",
+    "date": "2025-08-16",
+    "time": "08:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e049",
+    "name": "Sagra della Pizza",
+    "location": "Torino",
+    "description": "Evento dedicato a food festival nella città di Torino.",
+    "date": "2025-08-10",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e050",
+    "name": "Proiezione Film Cult",
+    "location": "Roma",
+    "description": "Evento dedicato a cinema nella città di Roma.",
+    "date": "2025-07-22",
+    "time": "08:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e051",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Chieti",
+    "description": "Evento dedicato a theater nella città di Chieti.",
+    "date": "2025-08-20",
+    "time": "21:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e052",
+    "name": "Serata Cinema d'Autore",
+    "location": "Pescara",
+    "description": "Evento dedicato a cinema nella città di Pescara.",
+    "date": "2025-08-07",
+    "time": "20:30",
+    "type": "Cinema"
+  },
+  {
+    "id": "e053",
+    "name": "Street Food Party",
+    "location": "Palermo",
+    "description": "Evento dedicato a food festival nella città di Palermo.",
+    "date": "2025-07-17",
+    "time": "10:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e054",
+    "name": "Evento Fitness",
+    "location": "Napoli",
+    "description": "Evento dedicato a sport nella città di Napoli.",
+    "date": "2025-07-21",
+    "time": "15:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e055",
+    "name": "Laboratorio Creativo",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-07-25",
+    "time": "09:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e056",
+    "name": "Mercatino Vintage",
+    "location": "Chieti",
+    "description": "Evento dedicato a market nella città di Chieti.",
+    "date": "2025-07-17",
+    "time": "08:00",
+    "type": "Market"
+  },
+  {
+    "id": "e057",
+    "name": "Workshop di Pittura",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-08-18",
+    "time": "10:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e058",
+    "name": "Maratona Cittadina",
+    "location": "Chieti",
+    "description": "Evento dedicato a sport nella città di Chieti.",
+    "date": "2025-08-25",
+    "time": "18:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e059",
+    "name": "Esposizione Arte Moderna",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-08-08",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e060",
+    "name": "Corso di Fotografia",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-08-17",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e061",
+    "name": "Commedia Brillante",
+    "location": "Napoli",
+    "description": "Evento dedicato a theater nella città di Napoli.",
+    "date": "2025-08-24",
+    "time": "15:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e062",
+    "name": "Workshop di Pittura",
+    "location": "Napoli",
+    "description": "Evento dedicato a workshop nella città di Napoli.",
+    "date": "2025-08-29",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e063",
+    "name": "Mercatino Vintage",
+    "location": "Chieti",
+    "description": "Evento dedicato a market nella città di Chieti.",
+    "date": "2025-08-12",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e064",
+    "name": "Sagra della Pizza",
+    "location": "Milano",
+    "description": "Evento dedicato a food festival nella città di Milano.",
+    "date": "2025-08-03",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e065",
+    "name": "Serata Jazz",
+    "location": "Bari",
+    "description": "Evento dedicato a music nella città di Bari.",
+    "date": "2025-07-14",
+    "time": "15:00",
+    "type": "Music"
+  },
+  {
+    "id": "e066",
+    "name": "Installazioni Contemporanee",
+    "location": "Napoli",
+    "description": "Evento dedicato a art nella città di Napoli.",
+    "date": "2025-07-24",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e067",
+    "name": "Street Food Party",
+    "location": "Pescara",
+    "description": "Evento dedicato a food festival nella città di Pescara.",
+    "date": "2025-07-29",
     "time": "18:00",
     "type": "Food Festival"
   },
   {
-    "id": "e004",
-    "name": "Maratona Cittadina",
-    "location": "Pescara",
-    "description": "Gara podistica che attraversa le vie del centro storico.",
-    "date": "2025-07-08",
+    "id": "e068",
+    "name": "Workshop di Pittura",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-07-05",
     "time": "08:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e069",
+    "name": "Maratona Cittadina",
+    "location": "Bologna",
+    "description": "Evento dedicato a sport nella città di Bologna.",
+    "date": "2025-08-02",
+    "time": "18:00",
     "type": "Sport"
   },
   {
-    "id": "e005",
+    "id": "e070",
+    "name": "Workshop di Pittura",
+    "location": "Torino",
+    "description": "Evento dedicato a workshop nella città di Torino.",
+    "date": "2025-07-12",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e071",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Pescara",
+    "description": "Evento dedicato a theater nella città di Pescara.",
+    "date": "2025-07-13",
+    "time": "20:30",
+    "type": "Theater"
+  },
+  {
+    "id": "e072",
+    "name": "Street Food Party",
+    "location": "Bologna",
+    "description": "Evento dedicato a food festival nella città di Bologna.",
+    "date": "2025-07-03",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e073",
+    "name": "Mercatino Vintage",
+    "location": "Chieti",
+    "description": "Evento dedicato a market nella città di Chieti.",
+    "date": "2025-07-10",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e074",
+    "name": "Sagra della Pizza",
+    "location": "Palermo",
+    "description": "Evento dedicato a food festival nella città di Palermo.",
+    "date": "2025-08-15",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e075",
+    "name": "Maratona Cittadina",
+    "location": "Bari",
+    "description": "Evento dedicato a sport nella città di Bari.",
+    "date": "2025-07-09",
+    "time": "10:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e076",
+    "name": "Esposizione Arte Moderna",
+    "location": "Bologna",
+    "description": "Evento dedicato a art nella città di Bologna.",
+    "date": "2025-08-09",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e077",
+    "name": "Torneo di Calcio",
+    "location": "Milano",
+    "description": "Evento dedicato a sport nella città di Milano.",
+    "date": "2025-07-31",
+    "time": "09:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e078",
+    "name": "Proiezione Film Cult",
+    "location": "Bologna",
+    "description": "Evento dedicato a cinema nella città di Bologna.",
+    "date": "2025-07-12",
+    "time": "10:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e079",
+    "name": "Evento Fitness",
+    "location": "Torino",
+    "description": "Evento dedicato a sport nella città di Torino.",
+    "date": "2025-08-15",
+    "time": "21:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e080",
+    "name": "Festival della Pasta",
+    "location": "Roma",
+    "description": "Evento dedicato a food festival nella città di Roma.",
+    "date": "2025-08-02",
+    "time": "18:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e081",
+    "name": "Festival della Pasta",
+    "location": "Bari",
+    "description": "Evento dedicato a food festival nella città di Bari.",
+    "date": "2025-08-13",
+    "time": "15:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e082",
+    "name": "Torneo di Calcio",
+    "location": "Bologna",
+    "description": "Evento dedicato a sport nella città di Bologna.",
+    "date": "2025-07-29",
+    "time": "10:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e083",
+    "name": "Workshop di Pittura",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-08-01",
+    "time": "21:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e084",
+    "name": "Torneo di Calcio",
+    "location": "Palermo",
+    "description": "Evento dedicato a sport nella città di Palermo.",
+    "date": "2025-07-22",
+    "time": "21:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e085",
+    "name": "Torneo di Calcio",
+    "location": "Bari",
+    "description": "Evento dedicato a sport nella città di Bari.",
+    "date": "2025-07-01",
+    "time": "09:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e086",
+    "name": "Torneo di Calcio",
+    "location": "Bari",
+    "description": "Evento dedicato a sport nella città di Bari.",
+    "date": "2025-07-14",
+    "time": "15:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e087",
+    "name": "Live DJ Set",
+    "location": "Napoli",
+    "description": "Evento dedicato a music nella città di Napoli.",
+    "date": "2025-08-12",
+    "time": "15:00",
+    "type": "Music"
+  },
+  {
+    "id": "e088",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Chieti",
+    "description": "Evento dedicato a market nella città di Chieti.",
+    "date": "2025-07-11",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e089",
+    "name": "Serata Cinema d'Autore",
+    "location": "Palermo",
+    "description": "Evento dedicato a cinema nella città di Palermo.",
+    "date": "2025-08-20",
+    "time": "08:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e090",
+    "name": "Corso di Fotografia",
+    "location": "Milano",
+    "description": "Evento dedicato a workshop nella città di Milano.",
+    "date": "2025-07-25",
+    "time": "10:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e091",
+    "name": "Opera Lirica",
+    "location": "Bari",
+    "description": "Evento dedicato a theater nella città di Bari.",
+    "date": "2025-07-21",
+    "time": "15:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e092",
+    "name": "Proiezione Film Cult",
+    "location": "Napoli",
+    "description": "Evento dedicato a cinema nella città di Napoli.",
+    "date": "2025-08-17",
+    "time": "21:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e093",
+    "name": "Live DJ Set",
+    "location": "Chieti",
+    "description": "Evento dedicato a music nella città di Chieti.",
+    "date": "2025-07-30",
+    "time": "08:00",
+    "type": "Music"
+  },
+  {
+    "id": "e094",
+    "name": "Fiera dell'Artigianato",
+    "location": "Bari",
+    "description": "Evento dedicato a market nella città di Bari.",
+    "date": "2025-07-06",
+    "time": "15:00",
+    "type": "Market"
+  },
+  {
+    "id": "e095",
+    "name": "Proiezione Film Cult",
+    "location": "Palermo",
+    "description": "Evento dedicato a cinema nella città di Palermo.",
+    "date": "2025-08-23",
+    "time": "20:30",
+    "type": "Cinema"
+  },
+  {
+    "id": "e096",
+    "name": "Workshop di Pittura",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-07-31",
+    "time": "21:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e097",
+    "name": "Commedia Brillante",
+    "location": "Bari",
+    "description": "Evento dedicato a theater nella città di Bari.",
+    "date": "2025-08-01",
+    "time": "09:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e098",
+    "name": "Corso di Fotografia",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-07-13",
+    "time": "21:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e099",
+    "name": "Proiezione Film Cult",
+    "location": "Palermo",
+    "description": "Evento dedicato a cinema nella città di Palermo.",
+    "date": "2025-07-20",
+    "time": "20:30",
+    "type": "Cinema"
+  },
+  {
+    "id": "e100",
+    "name": "Evento Fitness",
+    "location": "Firenze",
+    "description": "Evento dedicato a sport nella città di Firenze.",
+    "date": "2025-08-25",
+    "time": "18:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e101",
     "name": "Mercato dell'Antiquariato",
     "location": "Roma",
-    "description": "Mercato settimanale di oggetti d'antiquariato e vintage.",
+    "description": "Evento dedicato a market nella città di Roma.",
+    "date": "2025-07-27",
+    "time": "21:00",
+    "type": "Market"
+  },
+  {
+    "id": "e102",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Chieti",
+    "description": "Evento dedicato a theater nella città di Chieti.",
+    "date": "2025-08-28",
+    "time": "08:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e103",
+    "name": "Proiezione Film Cult",
+    "location": "Napoli",
+    "description": "Evento dedicato a cinema nella città di Napoli.",
+    "date": "2025-07-17",
+    "time": "09:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e104",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Torino",
+    "description": "Evento dedicato a theater nella città di Torino.",
+    "date": "2025-07-04",
+    "time": "20:30",
+    "type": "Theater"
+  },
+  {
+    "id": "e105",
+    "name": "Commedia Brillante",
+    "location": "Torino",
+    "description": "Evento dedicato a theater nella città di Torino.",
+    "date": "2025-08-29",
+    "time": "18:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e106",
+    "name": "Serata Cinema d'Autore",
+    "location": "Bologna",
+    "description": "Evento dedicato a cinema nella città di Bologna.",
+    "date": "2025-07-30",
+    "time": "21:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e107",
+    "name": "Laboratorio Creativo",
+    "location": "Firenze",
+    "description": "Evento dedicato a workshop nella città di Firenze.",
+    "date": "2025-07-13",
+    "time": "08:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e108",
+    "name": "Festival della Pasta",
+    "location": "Napoli",
+    "description": "Evento dedicato a food festival nella città di Napoli.",
+    "date": "2025-07-28",
+    "time": "20:30",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e109",
+    "name": "Esposizione Arte Moderna",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-07-04",
+    "time": "21:00",
+    "type": "Art"
+  },
+  {
+    "id": "e110",
+    "name": "Corso di Fotografia",
+    "location": "Chieti",
+    "description": "Evento dedicato a workshop nella città di Chieti.",
+    "date": "2025-07-04",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e111",
+    "name": "Proiezione Film Cult",
+    "location": "Chieti",
+    "description": "Evento dedicato a cinema nella città di Chieti.",
+    "date": "2025-07-24",
+    "time": "18:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e112",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Chieti",
+    "description": "Evento dedicato a market nella città di Chieti.",
+    "date": "2025-07-26",
+    "time": "21:00",
+    "type": "Market"
+  },
+  {
+    "id": "e113",
+    "name": "Corso di Fotografia",
+    "location": "Palermo",
+    "description": "Evento dedicato a workshop nella città di Palermo.",
+    "date": "2025-07-05",
+    "time": "18:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e114",
+    "name": "Laboratorio Creativo",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-08-03",
+    "time": "09:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e115",
+    "name": "Street Food Party",
+    "location": "Bari",
+    "description": "Evento dedicato a food festival nella città di Bari.",
+    "date": "2025-08-03",
+    "time": "15:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e116",
+    "name": "Festival della Pasta",
+    "location": "Torino",
+    "description": "Evento dedicato a food festival nella città di Torino.",
+    "date": "2025-08-07",
+    "time": "15:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e117",
+    "name": "Esposizione Arte Moderna",
+    "location": "Roma",
+    "description": "Evento dedicato a art nella città di Roma.",
+    "date": "2025-07-07",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e118",
+    "name": "Proiezione Film Cult",
+    "location": "Bologna",
+    "description": "Evento dedicato a cinema nella città di Bologna.",
     "date": "2025-07-08",
+    "time": "21:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e119",
+    "name": "Evento Fitness",
+    "location": "Milano",
+    "description": "Evento dedicato a sport nella città di Milano.",
+    "date": "2025-08-04",
+    "time": "09:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e120",
+    "name": "Installazioni Contemporanee",
+    "location": "Roma",
+    "description": "Evento dedicato a art nella città di Roma.",
+    "date": "2025-08-26",
+    "time": "21:00",
+    "type": "Art"
+  },
+  {
+    "id": "e121",
+    "name": "Serata Cinema d'Autore",
+    "location": "Chieti",
+    "description": "Evento dedicato a cinema nella città di Chieti.",
+    "date": "2025-08-17",
+    "time": "08:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e122",
+    "name": "Cinema all'Aperto",
+    "location": "Napoli",
+    "description": "Evento dedicato a cinema nella città di Napoli.",
+    "date": "2025-07-03",
+    "time": "18:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e123",
+    "name": "Festival della Pasta",
+    "location": "Milano",
+    "description": "Evento dedicato a food festival nella città di Milano.",
+    "date": "2025-08-07",
+    "time": "09:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e124",
+    "name": "Street Food Party",
+    "location": "Roma",
+    "description": "Evento dedicato a food festival nella città di Roma.",
+    "date": "2025-08-06",
+    "time": "10:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e125",
+    "name": "Esposizione Arte Moderna",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-07-02",
+    "time": "18:00",
+    "type": "Art"
+  },
+  {
+    "id": "e126",
+    "name": "Festival della Pasta",
+    "location": "Chieti",
+    "description": "Evento dedicato a food festival nella città di Chieti.",
+    "date": "2025-08-23",
+    "time": "08:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e127",
+    "name": "Festival della Pasta",
+    "location": "Palermo",
+    "description": "Evento dedicato a food festival nella città di Palermo.",
+    "date": "2025-07-11",
+    "time": "08:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e128",
+    "name": "Serata Cinema d'Autore",
+    "location": "Pescara",
+    "description": "Evento dedicato a cinema nella città di Pescara.",
+    "date": "2025-07-11",
+    "time": "20:30",
+    "type": "Cinema"
+  },
+  {
+    "id": "e129",
+    "name": "Installazioni Contemporanee",
+    "location": "Bari",
+    "description": "Evento dedicato a art nella città di Bari.",
+    "date": "2025-07-29",
+    "time": "15:00",
+    "type": "Art"
+  },
+  {
+    "id": "e130",
+    "name": "Corso di Fotografia",
+    "location": "Milano",
+    "description": "Evento dedicato a workshop nella città di Milano.",
+    "date": "2025-07-17",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e131",
+    "name": "Workshop di Pittura",
+    "location": "Pescara",
+    "description": "Evento dedicato a workshop nella città di Pescara.",
+    "date": "2025-07-23",
+    "time": "08:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e132",
+    "name": "Installazioni Contemporanee",
+    "location": "Bari",
+    "description": "Evento dedicato a art nella città di Bari.",
+    "date": "2025-07-20",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e133",
+    "name": "Laboratorio Creativo",
+    "location": "Pescara",
+    "description": "Evento dedicato a workshop nella città di Pescara.",
+    "date": "2025-08-05",
+    "time": "15:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e134",
+    "name": "Commedia Brillante",
+    "location": "Bologna",
+    "description": "Evento dedicato a theater nella città di Bologna.",
+    "date": "2025-08-10",
+    "time": "21:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e135",
+    "name": "Installazioni Contemporanee",
+    "location": "Bologna",
+    "description": "Evento dedicato a art nella città di Bologna.",
+    "date": "2025-07-01",
+    "time": "10:00",
+    "type": "Art"
+  },
+  {
+    "id": "e136",
+    "name": "Maratona Cittadina",
+    "location": "Torino",
+    "description": "Evento dedicato a sport nella città di Torino.",
+    "date": "2025-08-03",
+    "time": "20:30",
+    "type": "Sport"
+  },
+  {
+    "id": "e137",
+    "name": "Corso di Fotografia",
+    "location": "Milano",
+    "description": "Evento dedicato a workshop nella città di Milano.",
+    "date": "2025-07-23",
+    "time": "08:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e138",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Roma",
+    "description": "Evento dedicato a theater nella città di Roma.",
+    "date": "2025-08-29",
+    "time": "08:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e139",
+    "name": "Torneo di Calcio",
+    "location": "Palermo",
+    "description": "Evento dedicato a sport nella città di Palermo.",
+    "date": "2025-07-22",
+    "time": "10:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e140",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Napoli",
+    "description": "Evento dedicato a market nella città di Napoli.",
+    "date": "2025-07-02",
     "time": "09:00",
     "type": "Market"
   },
   {
-    "id": "e006",
-    "name": "Spettacolo Teatrale",
+    "id": "e141",
+    "name": "Serata Cinema d'Autore",
+    "location": "Chieti",
+    "description": "Evento dedicato a cinema nella città di Chieti.",
+    "date": "2025-08-20",
+    "time": "10:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e142",
+    "name": "Concerto Rock Estivo",
+    "location": "Chieti",
+    "description": "Evento dedicato a music nella città di Chieti.",
+    "date": "2025-08-28",
+    "time": "18:00",
+    "type": "Music"
+  },
+  {
+    "id": "e143",
+    "name": "Sagra della Pizza",
+    "location": "Roma",
+    "description": "Evento dedicato a food festival nella città di Roma.",
+    "date": "2025-07-07",
+    "time": "10:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e144",
+    "name": "Torneo di Calcio",
+    "location": "Palermo",
+    "description": "Evento dedicato a sport nella città di Palermo.",
+    "date": "2025-08-22",
+    "time": "15:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e145",
+    "name": "Torneo di Calcio",
+    "location": "Napoli",
+    "description": "Evento dedicato a sport nella città di Napoli.",
+    "date": "2025-08-27",
+    "time": "09:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e146",
+    "name": "Cinema all'Aperto",
+    "location": "Napoli",
+    "description": "Evento dedicato a cinema nella città di Napoli.",
+    "date": "2025-07-11",
+    "time": "15:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e147",
+    "name": "Mostra di Fotografia",
+    "location": "Bari",
+    "description": "Evento dedicato a art nella città di Bari.",
+    "date": "2025-07-14",
+    "time": "08:00",
+    "type": "Art"
+  },
+  {
+    "id": "e148",
+    "name": "Installazioni Contemporanee",
     "location": "Pescara",
-    "description": "Commedia brillante al Teatro Massimo.",
-    "date": "2025-07-10",
+    "description": "Evento dedicato a art nella città di Pescara.",
+    "date": "2025-07-20",
+    "time": "15:00",
+    "type": "Art"
+  },
+  {
+    "id": "e149",
+    "name": "Corso di Fotografia",
+    "location": "Napoli",
+    "description": "Evento dedicato a workshop nella città di Napoli.",
+    "date": "2025-08-30",
+    "time": "10:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e150",
+    "name": "Cinema all'Aperto",
+    "location": "Pescara",
+    "description": "Evento dedicato a cinema nella città di Pescara.",
+    "date": "2025-08-19",
+    "time": "21:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e151",
+    "name": "Torneo di Calcio",
+    "location": "Torino",
+    "description": "Evento dedicato a sport nella città di Torino.",
+    "date": "2025-08-09",
+    "time": "20:30",
+    "type": "Sport"
+  },
+  {
+    "id": "e152",
+    "name": "Proiezione Film Cult",
+    "location": "Torino",
+    "description": "Evento dedicato a cinema nella città di Torino.",
+    "date": "2025-08-05",
+    "time": "10:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e153",
+    "name": "Evento Fitness",
+    "location": "Firenze",
+    "description": "Evento dedicato a sport nella città di Firenze.",
+    "date": "2025-08-09",
+    "time": "18:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e154",
+    "name": "Installazioni Contemporanee",
+    "location": "Roma",
+    "description": "Evento dedicato a art nella città di Roma.",
+    "date": "2025-07-07",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e155",
+    "name": "Cinema all'Aperto",
+    "location": "Milano",
+    "description": "Evento dedicato a cinema nella città di Milano.",
+    "date": "2025-07-21",
+    "time": "08:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e156",
+    "name": "Concerto Rock Estivo",
+    "location": "Palermo",
+    "description": "Evento dedicato a music nella città di Palermo.",
+    "date": "2025-08-14",
+    "time": "18:00",
+    "type": "Music"
+  },
+  {
+    "id": "e157",
+    "name": "Live DJ Set",
+    "location": "Torino",
+    "description": "Evento dedicato a music nella città di Torino.",
+    "date": "2025-08-29",
+    "time": "09:00",
+    "type": "Music"
+  },
+  {
+    "id": "e158",
+    "name": "Proiezione Film Cult",
+    "location": "Chieti",
+    "description": "Evento dedicato a cinema nella città di Chieti.",
+    "date": "2025-07-20",
+    "time": "21:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e159",
+    "name": "Maratona Cittadina",
+    "location": "Torino",
+    "description": "Evento dedicato a sport nella città di Torino.",
+    "date": "2025-08-02",
+    "time": "15:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e160",
+    "name": "Concerto Rock Estivo",
+    "location": "Palermo",
+    "description": "Evento dedicato a music nella città di Palermo.",
+    "date": "2025-08-02",
+    "time": "09:00",
+    "type": "Music"
+  },
+  {
+    "id": "e161",
+    "name": "Commedia Brillante",
+    "location": "Napoli",
+    "description": "Evento dedicato a theater nella città di Napoli.",
+    "date": "2025-08-11",
+    "time": "09:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e162",
+    "name": "Mostra di Fotografia",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-07-29",
+    "time": "09:00",
+    "type": "Art"
+  },
+  {
+    "id": "e163",
+    "name": "Street Food Party",
+    "location": "Palermo",
+    "description": "Evento dedicato a food festival nella città di Palermo.",
+    "date": "2025-07-15",
+    "time": "21:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e164",
+    "name": "Concerto Rock Estivo",
+    "location": "Palermo",
+    "description": "Evento dedicato a music nella città di Palermo.",
+    "date": "2025-07-24",
+    "time": "10:00",
+    "type": "Music"
+  },
+  {
+    "id": "e165",
+    "name": "Festival Pop",
+    "location": "Milano",
+    "description": "Evento dedicato a music nella città di Milano.",
+    "date": "2025-08-14",
+    "time": "08:00",
+    "type": "Music"
+  },
+  {
+    "id": "e166",
+    "name": "Corso di Fotografia",
+    "location": "Pescara",
+    "description": "Evento dedicato a workshop nella città di Pescara.",
+    "date": "2025-08-20",
+    "time": "08:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e167",
+    "name": "Commedia Brillante",
+    "location": "Bari",
+    "description": "Evento dedicato a theater nella città di Bari.",
+    "date": "2025-07-06",
+    "time": "21:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e168",
+    "name": "Sagra della Pizza",
+    "location": "Torino",
+    "description": "Evento dedicato a food festival nella città di Torino.",
+    "date": "2025-07-06",
+    "time": "15:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e169",
+    "name": "Fiera dell'Artigianato",
+    "location": "Chieti",
+    "description": "Evento dedicato a market nella città di Chieti.",
+    "date": "2025-08-09",
+    "time": "20:30",
+    "type": "Market"
+  },
+  {
+    "id": "e170",
+    "name": "Serata Jazz",
+    "location": "Roma",
+    "description": "Evento dedicato a music nella città di Roma.",
+    "date": "2025-08-30",
+    "time": "08:00",
+    "type": "Music"
+  },
+  {
+    "id": "e171",
+    "name": "Corso di Fotografia",
+    "location": "Palermo",
+    "description": "Evento dedicato a workshop nella città di Palermo.",
+    "date": "2025-08-03",
+    "time": "09:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e172",
+    "name": "Mercatino Vintage",
+    "location": "Milano",
+    "description": "Evento dedicato a market nella città di Milano.",
+    "date": "2025-07-05",
+    "time": "09:00",
+    "type": "Market"
+  },
+  {
+    "id": "e173",
+    "name": "Sagra della Pizza",
+    "location": "Napoli",
+    "description": "Evento dedicato a food festival nella città di Napoli.",
+    "date": "2025-07-23",
+    "time": "20:30",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e174",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Torino",
+    "description": "Evento dedicato a theater nella città di Torino.",
+    "date": "2025-07-21",
+    "time": "18:00",
+    "type": "Theater"
+  },
+  {
+    "id": "e175",
+    "name": "Serata Jazz",
+    "location": "Chieti",
+    "description": "Evento dedicato a music nella città di Chieti.",
+    "date": "2025-08-18",
+    "time": "10:00",
+    "type": "Music"
+  },
+  {
+    "id": "e176",
+    "name": "Street Food Party",
+    "location": "Napoli",
+    "description": "Evento dedicato a food festival nella città di Napoli.",
+    "date": "2025-08-18",
+    "time": "09:00",
+    "type": "Food Festival"
+  },
+  {
+    "id": "e177",
+    "name": "Esposizione Arte Moderna",
+    "location": "Napoli",
+    "description": "Evento dedicato a art nella città di Napoli.",
+    "date": "2025-08-16",
+    "time": "10:00",
+    "type": "Art"
+  },
+  {
+    "id": "e178",
+    "name": "Laboratorio Creativo",
+    "location": "Palermo",
+    "description": "Evento dedicato a workshop nella città di Palermo.",
+    "date": "2025-08-11",
+    "time": "20:30",
+    "type": "Workshop"
+  },
+  {
+    "id": "e179",
+    "name": "Spettacolo Teatrale Classico",
+    "location": "Bari",
+    "description": "Evento dedicato a theater nella città di Bari.",
+    "date": "2025-08-22",
     "time": "20:30",
     "type": "Theater"
+  },
+  {
+    "id": "e180",
+    "name": "Mercatino Vintage",
+    "location": "Bologna",
+    "description": "Evento dedicato a market nella città di Bologna.",
+    "date": "2025-07-20",
+    "time": "09:00",
+    "type": "Market"
+  },
+  {
+    "id": "e181",
+    "name": "Concerto Rock Estivo",
+    "location": "Napoli",
+    "description": "Evento dedicato a music nella città di Napoli.",
+    "date": "2025-08-15",
+    "time": "10:00",
+    "type": "Music"
+  },
+  {
+    "id": "e182",
+    "name": "Mostra di Fotografia",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-07-09",
+    "time": "20:30",
+    "type": "Art"
+  },
+  {
+    "id": "e183",
+    "name": "Live DJ Set",
+    "location": "Napoli",
+    "description": "Evento dedicato a music nella città di Napoli.",
+    "date": "2025-07-13",
+    "time": "21:00",
+    "type": "Music"
+  },
+  {
+    "id": "e184",
+    "name": "Corso di Fotografia",
+    "location": "Roma",
+    "description": "Evento dedicato a workshop nella città di Roma.",
+    "date": "2025-08-25",
+    "time": "21:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e185",
+    "name": "Installazioni Contemporanee",
+    "location": "Palermo",
+    "description": "Evento dedicato a art nella città di Palermo.",
+    "date": "2025-07-13",
+    "time": "15:00",
+    "type": "Art"
+  },
+  {
+    "id": "e186",
+    "name": "Serata Jazz",
+    "location": "Roma",
+    "description": "Evento dedicato a music nella città di Roma.",
+    "date": "2025-07-02",
+    "time": "08:00",
+    "type": "Music"
+  },
+  {
+    "id": "e187",
+    "name": "Workshop di Pittura",
+    "location": "Pescara",
+    "description": "Evento dedicato a workshop nella città di Pescara.",
+    "date": "2025-08-15",
+    "time": "21:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e188",
+    "name": "Mercatino Vintage",
+    "location": "Milano",
+    "description": "Evento dedicato a market nella città di Milano.",
+    "date": "2025-07-13",
+    "time": "08:00",
+    "type": "Market"
+  },
+  {
+    "id": "e189",
+    "name": "Proiezione Film Cult",
+    "location": "Firenze",
+    "description": "Evento dedicato a cinema nella città di Firenze.",
+    "date": "2025-08-25",
+    "time": "10:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e190",
+    "name": "Corso di Fotografia",
+    "location": "Bari",
+    "description": "Evento dedicato a workshop nella città di Bari.",
+    "date": "2025-07-03",
+    "time": "15:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e191",
+    "name": "Serata Cinema d'Autore",
+    "location": "Firenze",
+    "description": "Evento dedicato a cinema nella città di Firenze.",
+    "date": "2025-07-29",
+    "time": "09:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e192",
+    "name": "Torneo di Calcio",
+    "location": "Palermo",
+    "description": "Evento dedicato a sport nella città di Palermo.",
+    "date": "2025-08-20",
+    "time": "09:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e193",
+    "name": "Cinema all'Aperto",
+    "location": "Chieti",
+    "description": "Evento dedicato a cinema nella città di Chieti.",
+    "date": "2025-07-22",
+    "time": "21:00",
+    "type": "Cinema"
+  },
+  {
+    "id": "e194",
+    "name": "Torneo di Calcio",
+    "location": "Torino",
+    "description": "Evento dedicato a sport nella città di Torino.",
+    "date": "2025-07-14",
+    "time": "08:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e195",
+    "name": "Evento Fitness",
+    "location": "Napoli",
+    "description": "Evento dedicato a sport nella città di Napoli.",
+    "date": "2025-07-27",
+    "time": "09:00",
+    "type": "Sport"
+  },
+  {
+    "id": "e196",
+    "name": "Workshop di Pittura",
+    "location": "Bari",
+    "description": "Evento dedicato a workshop nella città di Bari.",
+    "date": "2025-07-25",
+    "time": "10:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e197",
+    "name": "Laboratorio Creativo",
+    "location": "Chieti",
+    "description": "Evento dedicato a workshop nella città di Chieti.",
+    "date": "2025-08-04",
+    "time": "15:00",
+    "type": "Workshop"
+  },
+  {
+    "id": "e198",
+    "name": "Serata Jazz",
+    "location": "Bologna",
+    "description": "Evento dedicato a music nella città di Bologna.",
+    "date": "2025-07-05",
+    "time": "09:00",
+    "type": "Music"
+  },
+  {
+    "id": "e199",
+    "name": "Installazioni Contemporanee",
+    "location": "Chieti",
+    "description": "Evento dedicato a art nella città di Chieti.",
+    "date": "2025-07-04",
+    "time": "09:00",
+    "type": "Art"
+  },
+  {
+    "id": "e200",
+    "name": "Mercato dell'Antiquariato",
+    "location": "Milano",
+    "description": "Evento dedicato a market nella città di Milano.",
+    "date": "2025-07-08",
+    "time": "21:00",
+    "type": "Market"
   }
 ]
