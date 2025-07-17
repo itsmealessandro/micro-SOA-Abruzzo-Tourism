@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class LocationAvailabilityService {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private static final String LOCATION_AVAILABILITY_URL = "http://locationAvailability:8080/availability";
+    private static final String LOCATION_AVAILABILITY_URL = "http://locationAvailability:8091/availability";
 
     @Async
     public CompletableFuture<String> getOutdoorInfo(String location, LocalDate date) {

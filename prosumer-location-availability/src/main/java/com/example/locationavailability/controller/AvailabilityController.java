@@ -1,8 +1,13 @@
 package com.example.locationavailability.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.locationavailability.model.LocationAvailabilityResponse;
 import com.example.locationavailability.service.AvailabilityService;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/availability")
@@ -14,6 +19,13 @@ public class AvailabilityController {
         this.availabilityService = availabilityService;
     }
     
+    /**
+     * Controlla la disponibilit  di una localit  per una certa data.
+     * La richiesta deve contenere la localit  e la data in formato ISO-8601 (AAA-MM-GG).
+     * La risposta contiene la disponibilit  complessiva per la localit  e la data richieste.
+     * @param request La richiesta contenente la localit  e la data.
+     * @return La risposta contenente la disponibilit  complessiva.
+     */
     @PostMapping("/sync")
     public LocationAvailabilityResponse checkAvailabilitySync(
         @RequestBody AvailabilityRequest request
@@ -22,6 +34,10 @@ public class AvailabilityController {
             request.getLocation(), 
             request.getDate()
         );
+    }
+    @GetMapping("/test")
+    public String testEndpoint() {
+    return "Availability Service is UP!";
     }
     
     // Classe interna per la richiesta
