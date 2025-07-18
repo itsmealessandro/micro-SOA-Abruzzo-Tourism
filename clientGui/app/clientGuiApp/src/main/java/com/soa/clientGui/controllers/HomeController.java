@@ -78,7 +78,6 @@ public class HomeController {
     if (response.getStatusCode().is2xxSuccessful()) {
       try {
 
-        ObjectMapper objectMapper = new ObjectMapper();
         TripPlannerResponseDTO responseDTO = objectMapper.readValue(response.getBody(), TripPlannerResponseDTO.class);
 
         System.out.println("########################################################################");

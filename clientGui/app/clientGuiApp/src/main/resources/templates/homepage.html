@@ -1,136 +1,266 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8" />
-    <title>Trip Planner</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
-        h1, h3 { color: #0056b3; }
-        form { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        form p { margin-bottom: 10px; }
-        input[type="text"], input[type="date"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 200px; }
-        input[type="submit"] { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
-        input[type="submit"]:hover { background-color: #0056b3; }
-        .results-section { display: flex; gap: 20px; margin-top: 20px; }
-        .column { flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 15px; padding: 10px; border-bottom: 1px dashed #eee; }
-        li:last-child { border-bottom: none; } /* No dashed line for the last item */
+  <meta charset="UTF-8" />
+  <title>Trip Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-        .restaurant-name, .event-name { color: #333; font-size: 1.2em; font-weight: bold; }
-        .restaurant-location, .event-location { color: #666; font-style: italic; margin-left: 10px; }
-        .menu-list, .event-details-list { margin-top: 5px; padding-left: 20px; list-style-type: disc; font-size: 0.9em; }
-        .dish-item, .event-item-detail { margin-bottom: 5px; }
-        .dish-name, .event-detail-label { font-weight: bold; }
-        .dish-description { color: #555; }
-        .dish-price { color: #28a745; font-weight: bold; margin-left: 10px;}
-        .event-type { color: #880088; font-weight: bold; margin-left: 10px; }
-        .event-time { color: #007bff; font-style: italic; }
-        .message-success { color: green; font-weight: bold; margin-top: 15px; }
-        .message-error { color: red; font-weight: bold; margin-top: 15px; }
-        .no-results { color: #777; font-style: italic; margin-top: 20px; }
-    </style>
+    h1,
+    h3 {
+      color: #0056b3;
+    }
+
+    form {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form p {
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .results-section {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px dashed #eee;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    /* No dashed line for the last item */
+
+    .restaurant-name,
+    .event-name {
+      color: #333;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .restaurant-location,
+    .event-location {
+      color: #666;
+      font-style: italic;
+      margin-left: 10px;
+    }
+
+    .menu-list,
+    .event-details-list {
+      margin-top: 5px;
+      padding-left: 20px;
+      list-style-type: disc;
+      font-size: 0.9em;
+    }
+
+    .dish-item,
+    .event-item-detail {
+      margin-bottom: 5px;
+    }
+
+    .dish-name,
+    .event-detail-label {
+      font-weight: bold;
+    }
+
+    .dish-description {
+      color: #555;
+    }
+
+    .dish-price {
+      color: #28a745;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .event-type {
+      color: #880088;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .event-time {
+      color: #007bff;
+      font-style: italic;
+    }
+
+    .message-success {
+      color: green;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .message-error {
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .no-results {
+      color: #777;
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Trip Planner</h1>
-    <form th:action="@{request}" method="post">
-        <p>Location: <input type="text" name="location" placeholder="e.g., Pescara" th:value="${requestedLocation}" /></p>
-        <p>Date: <input type="date" name="date" th:value="${#temporals.format(requestedDate, 'yyyy-MM-dd')}" /></p>
-        <input type="submit" value="Conferma" />
-    </form>
+  <h1>Trip Planner</h1>
+  <form th:action="@{request}" method="post">
+    <p>Location: <input type="text" name="location" placeholder="e.g., Pescara" th:value="${requestedLocation}" /></p>
+    <p>Date: <input type="date" name="date" th:value="${#temporals.format(requestedDate, 'yyyy-MM-dd')}" /></p>
+    <input type="submit" value="Conferma" />
+  </form>
 
-    <p th:if="${messageSuccess}" th:text="${messageSuccess}" class="message-success"></p>
-    <p th:if="${messageError}" th:text="${messageError}" class="message-error"></p>
+  <p th:if="${messageSuccess}" th:text="${messageSuccess}" class="message-success"></p>
+  <p th:if="${messageError}" th:text="${messageError}" class="message-error"></p>
 
-    <div class="results-section">
-        <div class="column">
-            <h3>Ristoranti con menu locali:</h3>
-            <ul th:if="${food != null and !food.isEmpty()}">
-                <li th:each="ristorante : ${food}">
-                    <div>
-                        <span class="restaurant-name" th:text="${ristorante.name}"></span>
-                        <span class="restaurant-location" th:text="${'(' + ristorante.location + ')'}"></span>
-                        <span th:if="${ristorante.rating > 0}" style="margin-left: 15px; color: gold;">
-                            &#9733; <span th:text="${#numbers.formatDecimal(ristorante.rating, 1, 1)}"></span>
-                        </span>
-                    </div>
-                    <ul class="menu-list">
-                        <li class="dish-item" th:each="piatto : ${ristorante.menu}">
-                            <span class="dish-name" th:text="${piatto.name}"></span>:
-                            <span class="dish-description" th:text="${piatto.description}"></span>
-                            <span class="dish-price" th:text="${'€' + #numbers.formatDecimal(piatto.price, 0, 2)}"></span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <p th:if="${food == null or food.isEmpty()}" class="no-results">Nessun ristorante disponibile per la ricerca specificata.</p>
-        </div>
-
-        <div class="column">
-            <h3>Eventi:</h3>
-            <ul th:if="${events != null and !events.isEmpty()}">
-                <li th:each="event : ${events}">
-                    <div>
-                        <span class="event-name" th:text="${event.name}"></span>
-                        <span class="event-location" th:text="${'(' + event.location + ')'}"></span>
-                        <span class="event-type" th:text="${'[' + event.type + ']'}"></span>
-                    </div>
-                    <ul class="event-details-list">
-                        <li class="event-item-detail">
-                            <span class="event-detail-label">Data:</span>
-                            <span th:text="${#temporals.format(event.date, 'dd MMMM yyyy')}"></span>
-                            <span th:if="${event.time}" class="event-time" th:text="${' ore ' + #temporals.format(event.time, 'HH:mm')}"></span>
-                        </li>
-                        <li class="event-item-detail">
-                            <span class="event-detail-label">Descrizione:</span>
-                            <span class="event-description" th:text="${event.description}"></span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <p th:if="${events == null or events.isEmpty()}" class="no-results">Nessun evento disponibile per la ricerca specificata.</p>
-        </div>
-
-        <!-- Weather Info -->
-        <div th:if="${locationAvailabilityResponse != null}">
-          <h2>Meteo per [[${locationAvailabilityResponse.location}]] il [[${locationAvailabilityResponse.date}]]</h2>
-          <p><strong>Condizioni:</strong> <span th:text="${locationAvailabilityResponse.weather.weatherCondition}"></span></p>
-          <p><strong>Temperatura:</strong> <span th:text="${locationAvailabilityResponse.weather.temperature}"></span>°C</p>
-          <p><strong>Umidità:</strong> <span th:text="${locationAvailabilityResponse.weather.humidity}"></span>%</p>
-          <p><strong>Vento:</strong> <span th:text="${locationAvailabilityResponse.weather.windSpeed}"></span> km/h</p>
-        </div>
-
-        <!-- Trail Info -->
-        <div th:if="${locationAvailabilityResponse.trails != null}">
-          <h2>Sentieri consigliati</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Lunghezza (km)</th>
-                <th>Difficoltà</th>
-              <th>Caratteristiche</th>
-              <th>Adatto al meteo</th>
-              <th>Raccomandato</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="trailAvailability : ${locationAvailabilityResponse.trails}">
-              <td th:text="${trailAvailability.trail.name}"></td>
-              <td th:text="${trailAvailability.trail.length}"></td>
-              <td th:text="${trailAvailability.trail.difficulty}"></td>
-              <td>
-                <ul>
-                  <li th:each="feature : ${trailAvailability.trail.features}" th:text="${feature}"></li>
-                </ul>
-              </td>
-              <td th:text="${trailAvailability.trail.weatherAdaptability}"></td>
-              <td th:text="${trailAvailability.reccommanded ? '✅ Sì' : '❌ No'}"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="results-section">
+    <div class="column">
+      <h3>Ristoranti con menu locali:</h3>
+      <ul th:if="${food != null and !food.isEmpty()}">
+        <li th:each="ristorante : ${food}">
+          <div>
+            <span class="restaurant-name" th:text="${ristorante.name}"></span>
+            <span class="restaurant-location" th:text="${'(' + ristorante.location + ')'}"></span>
+            <span th:if="${ristorante.rating > 0}" style="margin-left: 15px; color: gold;">
+              &#9733; <span th:text="${#numbers.formatDecimal(ristorante.rating, 1, 1)}"></span>
+            </span>
+          </div>
+          <ul class="menu-list">
+            <li class="dish-item" th:each="piatto : ${ristorante.menu}">
+              <span class="dish-name" th:text="${piatto.name}"></span>:
+              <span class="dish-description" th:text="${piatto.description}"></span>
+              <span class="dish-price" th:text="${'€' + #numbers.formatDecimal(piatto.price, 0, 2)}"></span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p th:if="${food == null or food.isEmpty()}" class="no-results">Nessun ristorante disponibile per la ricerca
+        specificata.</p>
     </div>
 
+    <div class="column">
+      <h3>Eventi:</h3>
+      <ul th:if="${events != null and !events.isEmpty()}">
+        <li th:each="event : ${events}">
+          <div>
+            <span class="event-name" th:text="${event.name}"></span>
+            <span class="event-location" th:text="${'(' + event.location + ')'}"></span>
+            <span class="event-type" th:text="${'[' + event.type + ']'}"></span>
+          </div>
+          <ul class="event-details-list">
+            <li class="event-item-detail">
+              <span class="event-detail-label">Data:</span>
+              <span th:text="${#temporals.format(event.date, 'dd MMMM yyyy')}"></span>
+              <span th:if="${event.time}" class="event-time"
+                th:text="${' ore ' + #temporals.format(event.time, 'HH:mm')}"></span>
+            </li>
+            <li class="event-item-detail">
+              <span class="event-detail-label">Descrizione:</span>
+              <span class="event-description" th:text="${event.description}"></span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p th:if="${events == null or events.isEmpty()}" class="no-results">Nessun evento disponibile per la ricerca
+        specificata.</p>
+    </div>
+
+    <div class="column" th:if="${locationAvailabilityResponse != null}">
+      <h3>Meteo per <span th:text="${locationAvailabilityResponse.location}"></span> il giorno scelto
+      </h3>
+      <ul>
+        <li><strong>Condizioni:</strong> <span
+            th:text="${locationAvailabilityResponse.weather.weatherCondition}"></span></li>
+        <li><strong>Temperatura:</strong> <span th:text="${locationAvailabilityResponse.weather.temperature}"></span>°C
+        </li>
+        <li><strong>Umidità:</strong> <span th:text="${locationAvailabilityResponse.weather.humidity}"></span>%</li>
+        <li><strong>Vento:</strong> <span th:text="${locationAvailabilityResponse.weather.windSpeed}"></span> km/h</li>
+      </ul>
+
+      <h3 th:if="${locationAvailabilityResponse.trails != null and !locationAvailabilityResponse.trails.isEmpty()}">
+        Sentieri consigliati:</h3>
+      <ul th:if="${locationAvailabilityResponse.trails != null and !locationAvailabilityResponse.trails.isEmpty()}">
+        <li th:each="trailAvailability : ${locationAvailabilityResponse.trails}">
+          <div>
+            <span class="event-name" th:text="${trailAvailability.trail.name}"></span>
+            <span class="event-location" th:text="${'(' + trailAvailability.trail.location + ')'}"></span>
+          </div>
+          <ul class="event-details-list">
+            <li><strong>Lunghezza:</strong> <span th:text="${trailAvailability.trail.length}"></span> km</li>
+            <li><strong>Difficoltà:</strong> <span th:text="${trailAvailability.trail.difficulty}"></span>/5</li>
+            <li>
+              <strong>Caratteristiche:</strong>
+              <ul>
+                <li th:each="f : ${trailAvailability.trail.features}" th:text="${f}"></li>
+              </ul>
+            </li>
+            <li><strong>Adatto al meteo:</strong> <span th:text="${trailAvailability.trail.weatherAdaptability}"></span>
+            </li>
+            <li><strong>Raccomandato:</strong> <span
+                th:text="${trailAvailability.reccommanded ? '✅ Sì' : '❌ No'}"></span></li>
+          </ul>
+        </li>
+      </ul>
+      <p th:if="${locationAvailabilityResponse.trails == null or locationAvailabilityResponse.trails.isEmpty()}"
+        class="no-results">Nessun sentiero consigliato per questa località.</p>
+    </div>
+  </div>
+
 </body>
+
 </html>

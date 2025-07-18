@@ -4,12 +4,36 @@ import java.time.LocalDate;
 import java.time.LocalTime; // To store event time
 
 public class Event {
+  private String id;
   private String name;
   private String location;
   private String description;
   private LocalDate date;
   private LocalTime time;
   private String type;
+
+  public Event() {
+  }
+
+  public Event(String id, String name, String location, String description, LocalDate date, LocalTime time,
+      String type) {
+    this.id = id;
+    this.name = name;
+    this.location = location;
+    this.description = description;
+    this.date = date;
+    this.time = time;
+    this.type = type;
+  }
+
+  // Getters and Setters
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
   public String getName() {
     return name;
@@ -55,15 +79,15 @@ public class Event {
     return type;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
   @Override
   public String toString() {
-    return "Event [name=" + name + ", location=" + location + ", description=" + description + ", date=" + date
-        + ", time=" + time + ", type=" + type + ", getName()=" + getName() + ", getLocation()=" + getLocation()
-        + ", getDescription()=" + getDescription() + ", getDate()=" + getDate() + ", getTime()=" + getTime()
-        + ", getType()=" + getType() + "]";
+    return "Event [id=" + id + ", name=" + name + ", location=" + location + ", description=" + description
+        + ", date=" + date + ", time=" + time + ", type=" + type + ", getId()=" + getId() + ", getName()=" + getName()
+        + ", getLocation()=" + getLocation() + ", getDescription()=" + getDescription() + ", getDate()=" + getDate()
+        + ", getTime()=" + getTime() + ", getType()=" + getType() + "]";
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 }
