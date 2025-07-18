@@ -41,6 +41,9 @@ public class HomeController {
   @PostMapping("/request")
   public CompletableFuture<ResponseEntity<Map<String, Object>>> tripRequest(@RequestParam String location,
       @RequestParam LocalDate date) {
+    System.out.println("#######################");
+    System.out.println("Request received from clientGUI");
+    System.out.println("#######################");
     logger.info("Trip request received for location: {} on date: {}", location, date);
 
     return tripPlannerService.planTrip(location, date)

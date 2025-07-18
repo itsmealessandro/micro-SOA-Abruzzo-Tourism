@@ -1,8 +1,8 @@
-package com.example.locationavailability.model;
+package com.soa.clientGui.model;
 
 import java.util.List;
 
-public class TrailAvailability {
+public class Trail {
   private String id;
   private String name;
   private String location;
@@ -11,6 +11,18 @@ public class TrailAvailability {
   private List<String> features;
   private WeatherAdaptability weatherAdaptability;
 
+  // Costruttore
+  public Trail(String id, String name, String location, double length,
+      int difficulty, List<String> features) {
+    this.id = id;
+    this.name = name;
+    this.location = location;
+    this.length = length;
+    this.difficulty = difficulty;
+    this.features = features;
+  }
+
+  // Getters e Setters
   public String getId() {
     return id;
   }
@@ -66,14 +78,4 @@ public class TrailAvailability {
   public void setWeatherAdaptability(WeatherAdaptability weatherAdaptability) {
     this.weatherAdaptability = weatherAdaptability;
   }
-
-  @Override
-  public String toString() {
-    return "TrailAvailability [id=" + id + ", name=" + name + ", location=" + location + ", length=" + length
-        + ", difficulty=" + difficulty + ", features=" + features + ", weatherAdaptability=" + weatherAdaptability
-        + ", getId()=" + getId() + ", getName()=" + getName() + ", getLocation()=" + getLocation() + ", getLength()="
-        + getLength() + ", getDifficulty()=" + getDifficulty() + ", getFeatures()=" + getFeatures()
-        + ", getWeatherAdaptability()=" + getWeatherAdaptability() + "]";
-  }
-
 }

@@ -2,7 +2,7 @@ package com.example.locationavailability.service;
 
 import com.example.locationavailability.model.LocationAvailabilityResponse;
 import com.example.locationavailability.model.TrailAvailability;
-import com.example.locationavailability.model.WeatherInfo;
+import com.example.locationavailability.model.Weather;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +29,7 @@ public class AvailabilityService {
       CompletableFuture<List<TrailAvailability>> trailsFuture = CompletableFuture
           .supplyAsync(() -> trailServiceClient.getTrailsByLocation(location));
 
-      CompletableFuture<WeatherInfo> weatherFuture = CompletableFuture
+      CompletableFuture<Weather> weatherFuture = CompletableFuture
           .supplyAsync(() -> weatherServiceClient.getWeatherForecast(location, date));
 
       // Aspetta entrambe le risposte
@@ -37,7 +37,7 @@ public class AvailabilityService {
 
       // Recupera risultati
       List<TrailAvailability> trails = trailsFuture.get();
-      WeatherInfo weather = weatherFuture.get();
+      Weather weather = weatherFuture.get();
 
       return buildResponse(location, date, trails, weather);
 
@@ -50,7 +50,7 @@ public class AvailabilityService {
       String location,
       String date,
       List<TrailAvailability> trails,
-      WeatherInfo weather) {
+      Weather weather) {
 
     // Costruisci risposta
     LocationAvailabilityResponse response = new LocationAvailabilityResponse();

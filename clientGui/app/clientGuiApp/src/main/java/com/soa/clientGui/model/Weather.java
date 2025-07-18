@@ -1,11 +1,10 @@
-package com.example.locationavailability.model;
+package com.soa.clientGui.model;
 
-import lombok.Data;
+import java.util.Date;
 
-@Data
-public class WeatherInfo {
+public class Weather {
   private String location;
-  private String date;
+  private Date date; // MUST USE FOR XML CONVERSION
   private String conditions;
   private double temperature;
   private double humidity;
@@ -13,6 +12,24 @@ public class WeatherInfo {
   private boolean suitableForTrails;
   private String recommendation;
 
+  public Weather() {
+  }
+
+  public Weather(String location, Date date, String conditions,
+      double temperature, double humidity,
+      double windSpeed, boolean suitableForTrails,
+      String recommendation) {
+    this.location = location;
+    this.date = date;
+    this.conditions = conditions;
+    this.temperature = temperature;
+    this.humidity = humidity;
+    this.windSpeed = windSpeed;
+    this.suitableForTrails = suitableForTrails;
+    this.recommendation = recommendation;
+  }
+
+  // Getters and Setters
   public String getLocation() {
     return location;
   }
@@ -21,11 +38,11 @@ public class WeatherInfo {
     this.location = location;
   }
 
-  public String getDate() {
+  public Date getDate() {
     return date;
   }
 
-  public void setDate(String date) {
+  public void setDate(Date date) {
     this.date = date;
   }
 
@@ -76,15 +93,4 @@ public class WeatherInfo {
   public void setRecommendation(String recommendation) {
     this.recommendation = recommendation;
   }
-
-  @Override
-  public String toString() {
-    return "WeatherInfo [location=" + location + ", date=" + date + ", conditions=" + conditions + ", temperature="
-        + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", suitableForTrails="
-        + suitableForTrails + ", recommendation=" + recommendation + ", getLocation()=" + getLocation()
-        + ", getDate()=" + getDate() + ", getConditions()=" + getConditions() + ", getTemperature()="
-        + getTemperature() + ", getHumidity()=" + getHumidity() + ", getWindSpeed()=" + getWindSpeed()
-        + ", isSuitableForTrails()=" + isSuitableForTrails() + ", getRecommendation()=" + getRecommendation() + "]";
-  }
-
 }

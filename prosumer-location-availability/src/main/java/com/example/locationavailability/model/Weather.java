@@ -1,4 +1,4 @@
-package rest.spring.provider_weather.model;
+package com.example.locationavailability.model;
 
 import java.util.Date;
 

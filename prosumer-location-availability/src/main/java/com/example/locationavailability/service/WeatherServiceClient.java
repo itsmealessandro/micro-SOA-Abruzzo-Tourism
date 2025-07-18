@@ -1,6 +1,8 @@
 package com.example.locationavailability.service;
 
-import com.example.locationavailability.model.WeatherInfo;
+import com.example.locationavailability.model.Weather;
+import com.example.locationavailability.model.WeatherCondition;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
@@ -9,6 +11,11 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+import java.util.Locale;
 
 @Service
 public class WeatherServiceClient {
@@ -22,7 +29,7 @@ public class WeatherServiceClient {
     this.webServiceTemplate = webServiceTemplate;
   }
 
-  public WeatherInfo getWeatherForecast(String location, String date) {
+  public Weather getWeatherForecast(String location, String date) {
     System.out.println("##############################################");
     System.out.println("SENDING REQUEST TO WEATHER");
     String request = """
@@ -49,17 +56,26 @@ public class WeatherServiceClient {
     return parseWeatherResponse(response);
   }
 
-  public WeatherInfo parseWeatherResponse(String xml) {
-    WeatherInfo info = new WeatherInfo();
+  public Weather parseWeatherResponse(String xml) {
+
+    System.out.println("############################################");
+    System.out.println("XML ");
+    System.out.println(xml);
+    System.out.println("############################################");
+    Weather info = new Weather();
 
     info.setLocation(extractTagValue(xml, "location"));
-    info.setDate(extractTagValue(xml, "date"));
-    info.setConditions(extractTagValue(xml, "conditions"));
+    try {
+      String dateStr = extractTagValue(xml, "date");
+      ZonedDateTime zonedDateTime = ZonedDateTime.parse(dateStr);
+      info.setDate(Date.from(zonedDateTime.toInstant()));
+    } catch (DateTimeParseException e) {
+      throw new RuntimeException("Invalid date format in weather response", e);
+    }
+    info.setWeatherCondition(WeatherCondition.valueOf(extractTagValue(xml, "weatherCondition")));
     info.setTemperature(Double.parseDouble(extractTagValue(xml, "temperature")));
     info.setHumidity(Double.parseDouble(extractTagValue(xml, "humidity")));
     info.setWindSpeed(Double.parseDouble(extractTagValue(xml, "windSpeed")));
-    info.setSuitableForTrails(Boolean.parseBoolean(extractTagValue(xml, "suitableForTrails")));
-    info.setRecommendation(extractTagValue(xml, "recommendation"));
 
     System.out.println("#######################################");
     System.out.println("RESPONSE FROM WEATHER API");
@@ -70,8 +86,17 @@ public class WeatherServiceClient {
   }
 
   private String extractTagValue(String xml, String tag) {
-    int start = xml.indexOf("<" + tag + ">") + tag.length() + 2;
-    int end = xml.indexOf("</" + tag + ">");
-    return xml.substring(start, end);
+    String openTag = "<" + tag + ">";
+    String closeTag = "</" + tag + ">";
+
+    int start = xml.indexOf(openTag);
+    int end = xml.indexOf(closeTag);
+
+    if (start == -1 || end == -1 || start + openTag.length() > end) {
+      throw new RuntimeException("Missing or malformed tag: <" + tag + ">");
+    }
+
+    start += openTag.length();
+    return xml.substring(start, end).trim();
   }
 }

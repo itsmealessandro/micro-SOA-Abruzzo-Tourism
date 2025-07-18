@@ -69,8 +69,12 @@ public class HomeController {
         TripPlannerResponseDTO responseDTO = objectMapper.readValue(response.getBody(), TripPlannerResponseDTO.class);
 
         System.out.println("########################################################################");
+        System.out.println("Pretty-printed JSON:");
 
-        System.out.println(responseDTO);
+        // Convert the DTO back to a pretty-printed JSON string
+        String prettyJsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(responseDTO);
+        System.out.println(prettyJsonString);
+
         System.out.println("########################################################################");
 
         model.addAttribute("messageSuccess", responseDTO.getMessage());
@@ -78,7 +82,8 @@ public class HomeController {
         model.addAttribute("events", responseDTO.getEvents());
         model.addAttribute("requestedLocation", responseDTO.getRequestedLocation());
         model.addAttribute("requestedDate", date);
-        model.addAttribute("trailsAvailability", responseDTO.getTrailsAvailability()); // TODO: set data values on HTML
+        model.addAttribute("locationAvailability", responseDTO.getTrailsAvailability()); // TODO: set data values on
+                                                                                         // HTML
       } catch (Exception e) {
         logger.error("Errore durante il parsing della risposta JSON: {}", e.getMessage(), e);
         model.addAttribute("messageError", "Errore nella lettura della risposta dal trip-planner.");
