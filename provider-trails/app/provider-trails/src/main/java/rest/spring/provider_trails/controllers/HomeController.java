@@ -41,5 +41,6 @@ public class HomeController {
         @RequestParam String reason,
         @RequestParam String recommendation
     ) {
+        trialService.updateWeatherAdaptability(id, suitable, reason, recommendation);
     }
 }
