@@ -35,9 +35,12 @@ public class AvailabilityController {
     System.out.println("##################################");
     System.out.println("Request received from TRIP PLANNER");
     System.out.println("##################################");
-    return availabilityService.checkAvailabilitySync(
+    LocationAvailabilityResponse locationAvailabilityResponse = availabilityService.checkAvailabilitySync(
         request.getLocation(),
         request.getDate());
+    System.out.println("ANOTHER FINAL CHECK");
+    System.out.println(locationAvailabilityResponse);
+    return locationAvailabilityResponse;
   }
 
   @GetMapping("/test")

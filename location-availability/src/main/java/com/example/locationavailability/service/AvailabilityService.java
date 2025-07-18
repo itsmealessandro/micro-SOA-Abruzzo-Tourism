@@ -48,7 +48,10 @@ public class AvailabilityService {
       Weather weather = weatherFuture.get();
 
       System.out.println("building response...");
-      return buildResponse(location, date, trails, weather);
+      LocationAvailabilityResponse locationAvailabilityResponse = buildResponse(location, date, trails, weather);
+      System.out.println("FINAL RESPONSE TO TRIP PLANNER");
+      System.out.println(locationAvailabilityResponse.toString());
+      return locationAvailabilityResponse;
 
     } catch (InterruptedException | ExecutionException e) {
       throw new RuntimeException("Error processing availability", e);
