@@ -1,7 +1,10 @@
 package com.microsoa.tripPlanner.services;
 
 import com.microsoa.tripPlanner.models.RestaurantWithMenu;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoa.tripPlanner.models.Event;
+import com.microsoa.tripPlanner.models.LocationAvailabilityResponse;
+
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -20,6 +23,7 @@ public class TripPlannerService {
   private final FoodService foodService;
   private final EventService eventService; // NEW FIELD
   private final LocationAvailabilityService locationAvailabilityService;
+  private final ObjectMapper objectMapper = new ObjectMapper();
 
   // Update constructor to inject EventService
   public TripPlannerService(FoodService foodService, EventService eventService,
@@ -58,7 +62,7 @@ public class TripPlannerService {
             result.put("events", Collections.emptyList()); // Provide empty list on error
           }
           try {
-            result.put("outdoorInfo", weatherAndTrailsFuture.get());
+            result.put("locationAvailabilityResponse", weatherAndTrailsFuture.get());
           } catch (Exception e) {
             logger.error("Failed to get outdoor info: {}", e.getMessage());
             result.put("outdoorInfo", "Unavailable");
@@ -68,13 +72,22 @@ public class TripPlannerService {
           System.out.println("TOTAL RESULT FROM ALL CALLS");
           String foodResult = result.get("food").toString();
           String eventsResult = result.get("events").toString();
-          String outdoorInfoResult = result.get("outdoorInfo").toString();
+          LocationAvailabilityResponse locAvailResp = null;
+          try {
+            String json = weatherAndTrailsFuture.get();
+            locAvailResp = objectMapper.readValue(json,
+                LocationAvailabilityResponse.class);
+            result.put("locationAvailabilityResponse", locAvailResp);
+          } catch (Exception e) {
+            logger.error("Failed to get outdoor info: {}", e.getMessage());
+            result.put("locationAvailabilityResponse", null);
+          }
           System.out.println("FOOD:");
           System.out.println(foodResult);
           System.out.println("events:");
           System.out.println(eventsResult);
-          System.out.println("outdoor:");
-          System.out.println(outdoorInfoResult);
+          System.out.println("locationAvailabilityResponse");
+          System.out.println(locAvailResp);
           System.out.println("############################");
           return result;
         })
@@ -85,7 +98,7 @@ public class TripPlannerService {
           errorResult.put("error", "Failed to plan trip: " + ex.getMessage());
           errorResult.put("food", Collections.emptyList());
           errorResult.put("events", Collections.emptyList());
-          errorResult.put("outdoorInfo", "Unavailable");
+          errorResult.put("locationAvailabilityResponse", "Unavailable");
           return errorResult;
         });
   }

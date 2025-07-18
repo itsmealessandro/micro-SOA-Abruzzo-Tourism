@@ -1,4 +1,4 @@
-package com.soa.clientGui.model;
+package com.microsoa.tripPlanner.models;
 
 import java.util.Date;
 

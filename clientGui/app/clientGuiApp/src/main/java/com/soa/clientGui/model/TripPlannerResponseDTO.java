@@ -10,7 +10,7 @@ public class TripPlannerResponseDTO {
   private String message;
   private List<Restaurant> food;
   private List<Event> events;
-  private TrailsAvailability trailsAvailability;
+  private LocationAvailabilityResponse locationAvailabilityResponse;
 
   // Getters and Setters
   public String getRequestedLocation() {
@@ -53,21 +53,21 @@ public class TripPlannerResponseDTO {
     this.events = events;
   }
 
-  public TrailsAvailability getTrailsAvailability() {
-    return trailsAvailability;
+  public LocationAvailabilityResponse getLocationAvailabilityResponse() {
+    return locationAvailabilityResponse;
   }
 
-  public void setTrailsAvailability(TrailsAvailability trailsAvailability) {
-    this.trailsAvailability = trailsAvailability;
+  public void setLocationAvailabilityResponse(LocationAvailabilityResponse locationAvailabilityResponse) {
+    this.locationAvailabilityResponse = locationAvailabilityResponse;
   }
 
   @Override
   public String toString() {
     return "TripPlannerResponseDTO [requestedLocation=" + requestedLocation + ", requestedDate=" + requestedDate
-        + ", message=" + message + ", food=" + food + ", events=" + events + ", trailsAvailability="
-        + trailsAvailability + ", getRequestedLocation()=" + getRequestedLocation() + ", getRequestedDate()="
+        + ", message=" + message + ", food=" + food + ", events=" + events + ", locationAvailabilityResponse="
+        + locationAvailabilityResponse + ", getRequestedLocation()=" + getRequestedLocation() + ", getRequestedDate()="
         + getRequestedDate() + ", getMessage()=" + getMessage() + ", getFood()=" + getFood() + ", getEvents()="
-        + getEvents() + ", getTrailsAvailability()=" + getTrailsAvailability() + "]";
+        + getEvents() + ", getLocationAvailabilityResponse()=" + getLocationAvailabilityResponse() + "]";
   }
 
 }

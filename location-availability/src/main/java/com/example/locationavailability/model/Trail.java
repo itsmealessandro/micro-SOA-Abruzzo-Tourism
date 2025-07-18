@@ -11,6 +11,10 @@ public class Trail {
   private List<String> features;
   private WeatherAdaptability weatherAdaptability;
 
+  public Trail() {
+    // Costruttore vuoto necessario per Jackson
+  }
+
   // Getters e Setters
   public String getId() {
     return id;

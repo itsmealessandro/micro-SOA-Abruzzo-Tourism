@@ -4,6 +4,7 @@ import com.microsoa.tripPlanner.models.RestaurantWithMenu;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoa.tripPlanner.models.Event; // NEW IMPORT
+import com.microsoa.tripPlanner.models.LocationAvailabilityResponse;
 import com.microsoa.tripPlanner.services.TripPlannerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,12 +64,17 @@ public class HomeController {
         new TypeReference<List<Event>>() {
         });
 
+    LocationAvailabilityResponse locationAvailability = objectMapper.convertValue(
+        tripData.get("locationAvailabilityResponse"),
+        LocationAvailabilityResponse.class);
+
     Map<String, Object> response = new HashMap<>();
     response.put("food", food);
     response.put("events", events);
     response.put("message", "Ecco i risultati della tua pianificazione!");
     response.put("requestedLocation", location);
     response.put("requestedDate", date);
+    response.put("locationAvailabilityResponse", locationAvailability);
 
     logger.info("Trip data successfully processed for location: {} on date: {}", location, date);
     return ResponseEntity.ok(response);

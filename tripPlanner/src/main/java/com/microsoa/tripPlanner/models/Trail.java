@@ -1,4 +1,4 @@
-package com.soa.clientGui.model;
+package com.microsoa.tripPlanner.models;
 
 import java.util.List;
 
@@ -13,17 +13,6 @@ public class Trail {
 
   public Trail() {
     // Costruttore vuoto necessario per Jackson
-  }
-
-  // Costruttore
-  public Trail(String id, String name, String location, double length,
-      int difficulty, List<String> features) {
-    this.id = id;
-    this.name = name;
-    this.location = location;
-    this.length = length;
-    this.difficulty = difficulty;
-    this.features = features;
   }
 
   // Getters e Setters
