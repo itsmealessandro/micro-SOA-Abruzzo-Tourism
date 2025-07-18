@@ -49,13 +49,23 @@ public class WeatherServiceClient {
     return parseWeatherResponse(response);
   }
 
-  private WeatherInfo parseWeatherResponse(String xml) {
+  public WeatherInfo parseWeatherResponse(String xml) {
     WeatherInfo info = new WeatherInfo();
-    // Estrai valori dall'XML (esempio semplificato)
+
     info.setLocation(extractTagValue(xml, "location"));
+    info.setDate(extractTagValue(xml, "date"));
     info.setConditions(extractTagValue(xml, "conditions"));
     info.setTemperature(Double.parseDouble(extractTagValue(xml, "temperature")));
+    info.setHumidity(Double.parseDouble(extractTagValue(xml, "humidity")));
+    info.setWindSpeed(Double.parseDouble(extractTagValue(xml, "windSpeed")));
     info.setSuitableForTrails(Boolean.parseBoolean(extractTagValue(xml, "suitableForTrails")));
+    info.setRecommendation(extractTagValue(xml, "recommendation"));
+
+    System.out.println("#######################################");
+    System.out.println("RESPONSE FROM WEATHER API");
+    System.out.println(info.toString());
+    System.out.println("#######################################");
+
     return info;
   }
 

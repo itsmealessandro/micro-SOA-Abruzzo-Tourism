@@ -4,76 +4,87 @@ import lombok.Data;
 
 @Data
 public class WeatherInfo {
-    private String location;
-    private String date;
-    private String conditions;
-    private double temperature;
-    private double humidity;
-    private double windSpeed;
-    private boolean suitableForTrails;
-    private String recommendation;
+  private String location;
+  private String date;
+  private String conditions;
+  private double temperature;
+  private double humidity;
+  private double windSpeed;
+  private boolean suitableForTrails;
+  private String recommendation;
 
-    public String getLocation() {
-        return location;
-    }
+  public String getLocation() {
+    return location;
+  }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+  public void setLocation(String location) {
+    this.location = location;
+  }
 
-    public String getDate() {
-        return date;
-    }
+  public String getDate() {
+    return date;
+  }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+  public void setDate(String date) {
+    this.date = date;
+  }
 
-    public String getConditions() {
-        return conditions;
-    }
+  public String getConditions() {
+    return conditions;
+  }
 
-    public void setConditions(String conditions) {
-        this.conditions = conditions;
-    }
+  public void setConditions(String conditions) {
+    this.conditions = conditions;
+  }
 
-    public double getTemperature() {
-        return temperature;
-    }
+  public double getTemperature() {
+    return temperature;
+  }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
+  public void setTemperature(double temperature) {
+    this.temperature = temperature;
+  }
 
-    public double getHumidity() {
-        return humidity;
-    }
+  public double getHumidity() {
+    return humidity;
+  }
 
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
-    }
+  public void setHumidity(double humidity) {
+    this.humidity = humidity;
+  }
 
-    public double getWindSpeed() {
-        return windSpeed;
-    }
+  public double getWindSpeed() {
+    return windSpeed;
+  }
 
-    public void setWindSpeed(double windSpeed) {
-        this.windSpeed = windSpeed;
-    }
+  public void setWindSpeed(double windSpeed) {
+    this.windSpeed = windSpeed;
+  }
 
-    public boolean isSuitableForTrails() {
-        return suitableForTrails;
-    }
+  public boolean isSuitableForTrails() {
+    return suitableForTrails;
+  }
 
-    public void setSuitableForTrails(boolean suitableForTrails) {
-        this.suitableForTrails = suitableForTrails;
-    }
+  public void setSuitableForTrails(boolean suitableForTrails) {
+    this.suitableForTrails = suitableForTrails;
+  }
 
-    public String getRecommendation() {
-        return recommendation;
-    }
+  public String getRecommendation() {
+    return recommendation;
+  }
 
-    public void setRecommendation(String recommendation) {
-        this.recommendation = recommendation;
-    }
+  public void setRecommendation(String recommendation) {
+    this.recommendation = recommendation;
+  }
+
+  @Override
+  public String toString() {
+    return "WeatherInfo [location=" + location + ", date=" + date + ", conditions=" + conditions + ", temperature="
+        + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", suitableForTrails="
+        + suitableForTrails + ", recommendation=" + recommendation + ", getLocation()=" + getLocation()
+        + ", getDate()=" + getDate() + ", getConditions()=" + getConditions() + ", getTemperature()="
+        + getTemperature() + ", getHumidity()=" + getHumidity() + ", getWindSpeed()=" + getWindSpeed()
+        + ", isSuitableForTrails()=" + isSuitableForTrails() + ", getRecommendation()=" + getRecommendation() + "]";
+  }
+
 }

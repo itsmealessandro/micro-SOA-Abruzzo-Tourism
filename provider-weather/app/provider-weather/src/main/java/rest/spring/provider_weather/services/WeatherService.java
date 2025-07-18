@@ -11,9 +11,8 @@ import rest.spring.provider_weather.model.Weather;
 
 @WebService
 public interface WeatherService {
-    @WebMethod
-    Weather getWeatherForecast(
-        @WebParam(name = "location") String location,
-        @WebParam(name = "date") Date date
-    ) throws LocationNotFoundException, ImpossibleToPredictWeatherException;
+  @WebMethod
+  Weather getWeatherForecast(
+      @WebParam(name = "location") String location,
+      @WebParam(name = "date") Date date) throws LocationNotFoundException, ImpossibleToPredictWeatherException;
 }
