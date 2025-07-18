@@ -95,8 +95,10 @@ public class HomeController {
         model.addAttribute("events", responseDTO.getEvents());
         model.addAttribute("requestedLocation", responseDTO.getRequestedLocation());
         model.addAttribute("requestedDate", date);
-        model.addAttribute("locationAvailability", responseDTO.getLocationAvailabilityResponse()); // TODO: set data
-                                                                                                   // values on
+        model.addAttribute("locationAvailabilityResponse", responseDTO.getLocationAvailabilityResponse()); // TODO:
+                                                                                                           // set
+                                                                                                           // data
+        // values on
         // HTML
       } catch (Exception e) {
         logger.error("Errore durante il parsing della risposta JSON: {}", e.getMessage(), e);

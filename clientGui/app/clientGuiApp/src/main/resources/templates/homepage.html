@@ -90,6 +90,47 @@
             </ul>
             <p th:if="${events == null or events.isEmpty()}" class="no-results">Nessun evento disponibile per la ricerca specificata.</p>
         </div>
+
+        <!-- Weather Info -->
+        <div th:if="${locationAvailabilityResponse != null}">
+          <h2>Meteo per [[${locationAvailabilityResponse.location}]] il [[${locationAvailabilityResponse.date}]]</h2>
+          <p><strong>Condizioni:</strong> <span th:text="${locationAvailabilityResponse.weather.weatherCondition}"></span></p>
+          <p><strong>Temperatura:</strong> <span th:text="${locationAvailabilityResponse.weather.temperature}"></span>°C</p>
+          <p><strong>Umidità:</strong> <span th:text="${locationAvailabilityResponse.weather.humidity}"></span>%</p>
+          <p><strong>Vento:</strong> <span th:text="${locationAvailabilityResponse.weather.windSpeed}"></span> km/h</p>
+        </div>
+
+        <!-- Trail Info -->
+        <div th:if="${locationAvailabilityResponse.trails != null}">
+          <h2>Sentieri consigliati</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Lunghezza (km)</th>
+                <th>Difficoltà</th>
+              <th>Caratteristiche</th>
+              <th>Adatto al meteo</th>
+              <th>Raccomandato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="trailAvailability : ${locationAvailabilityResponse.trails}">
+              <td th:text="${trailAvailability.trail.name}"></td>
+              <td th:text="${trailAvailability.trail.length}"></td>
+              <td th:text="${trailAvailability.trail.difficulty}"></td>
+              <td>
+                <ul>
+                  <li th:each="feature : ${trailAvailability.trail.features}" th:text="${feature}"></li>
+                </ul>
+              </td>
+              <td th:text="${trailAvailability.trail.weatherAdaptability}"></td>
+              <td th:text="${trailAvailability.reccommanded ? '✅ Sì' : '❌ No'}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
 </body>
 </html>
