@@ -16,30 +16,30 @@ import rest.spring.provider_trails.services.TrialService;
 @RestController
 @RequestMapping("/trails")
 public class HomeController {
-    
-    private final TrialService trialService;
-    
-    @Autowired
-    public HomeController(TrialService trialService) {
-        this.trialService = trialService;
-    }
-    
-    @GetMapping
-    public List<Trail> getTrailsByLocation(@RequestParam String location) {
-        return trialService.getTrailsByLocation(location);
-    }
-    
-    @GetMapping("/{id}")
-    public Trail getTrailById(@PathVariable String id) {
-        return trialService.getTrailById(id);
-    }
-    
-    @PutMapping("/{id}/weather-adapt")
-    public void updateWeatherAdaptability(
-        @PathVariable String id,
-        @RequestParam boolean suitable,
-        @RequestParam String reason,
-        @RequestParam String recommendation
-    ) {
-    }
+
+  private final TrialService trialService;
+
+  @Autowired
+  public HomeController(TrialService trialService) {
+    this.trialService = trialService;
+  }
+
+  @GetMapping
+  public List<Trail> getTrailsByLocation(@RequestParam String location) {
+    System.out.println("Received request for trails with location " + location);
+    return trialService.getTrailsByLocation(location);
+  }
+
+  @GetMapping("/{id}")
+  public Trail getTrailById(@PathVariable String id) {
+    return trialService.getTrailById(id);
+  }
+
+  @PutMapping("/{id}/weather-adapt")
+  public void updateWeatherAdaptability(
+      @PathVariable String id,
+      @RequestParam boolean suitable,
+      @RequestParam String reason,
+      @RequestParam String recommendation) {
+  }
 }

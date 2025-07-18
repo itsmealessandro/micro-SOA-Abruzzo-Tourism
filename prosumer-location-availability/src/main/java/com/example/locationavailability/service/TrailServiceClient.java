@@ -1,6 +1,6 @@
 package com.example.locationavailability.service;
 
-import com.example.locationavailability.model.TrailAvailability;
+import com.example.locationavailability.model.Trail;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -20,15 +20,19 @@ public class TrailServiceClient {
     this.restTemplate = restTemplate;
   }
 
-  public List<TrailAvailability> getTrailsByLocation(String location) {
-    TrailAvailability[] trails = restTemplate.getForObject(
+  public List<Trail> getTrailsByLocation(String location) {
+    Trail[] trails = restTemplate.getForObject(
         trailServiceUrl,
-        TrailAvailability[].class,
+        Trail[].class,
         location);
     System.out.println("#########################################");
     System.out.println("TRAILS RESPONSE");
-    System.out.println(trails);
+    for (Trail trail : trails) {
+
+      System.out.println(trail);
+
+    }
     System.out.println("#########################################");
-    return Arrays.asList(trails != null ? trails : new TrailAvailability[0]);
+    return Arrays.asList(trails);
   }
 }

@@ -78,4 +78,13 @@ public class Trail {
   public void setWeatherAdaptability(WeatherAdaptability weatherAdaptability) {
     this.weatherAdaptability = weatherAdaptability;
   }
+
+  @Override
+  public String toString() {
+    return "Trail [id=" + id + ", name=" + name + ", location=" + location + ", length=" + length + ", difficulty="
+        + difficulty + ", features=" + features + ", weatherAdaptability=" + weatherAdaptability + ", getId()="
+        + getId() + ", getName()=" + getName() + ", getLocation()=" + getLocation() + ", getLength()=" + getLength()
+        + ", getDifficulty()=" + getDifficulty() + ", getFeatures()=" + getFeatures() + ", getWeatherAdaptability()="
+        + getWeatherAdaptability() + "]";
+  }
 }

@@ -21,7 +21,7 @@ public class TrialServiceImpl implements TrialService {
   public void init() {
     // Dati di esempio per i borghi abruzzesi
     List<String> features1 = Arrays.asList("panoramico", "storico", "familiare");
-    Trail trail1 = new Trail("T1", "Sentiero del Lupo", "Roccascalegna", 8.5, 3, features1);
+    Trail trail1 = new Trail("T1", "Sentiero del Lupo", "Pescara", 8.5, 3, features1);
     trail1.setWeatherAdaptability(WeatherAdaptability.COPERTO);
 
     List<String> features2 = Arrays.asList("archeologico", "culturale", "difficile");
@@ -45,6 +45,10 @@ public class TrialServiceImpl implements TrialService {
         result.add(trail);
       }
     }
+    System.out.println("############################");
+    System.out.println("TRAILS Response");
+    System.out.println(result);
+    System.out.println("############################");
     return result;
   }
 
