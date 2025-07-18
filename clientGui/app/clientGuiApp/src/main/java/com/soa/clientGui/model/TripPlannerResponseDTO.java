@@ -69,4 +69,5 @@ public class TripPlannerResponseDTO {
         + getRequestedDate() + ", getMessage()=" + getMessage() + ", getFood()=" + getFood() + ", getEvents()="
         + getEvents() + ", getTrailsAvailability()=" + getTrailsAvailability() + "]";
   }
+
 }

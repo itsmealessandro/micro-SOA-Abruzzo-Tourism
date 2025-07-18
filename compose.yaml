@@ -49,13 +49,15 @@ services:
       - .env
     image: location-availability
     build:
-      context: ./locationAvailability/
+      context: ./location-availability/
       args:
         AVAILIBALITY_LOCATION_PORT: ${AVAILIBALITY_LOCATION_PORT}
     ports:
       - "${AVAILIBALITY_LOCATION_PORT:-8086}:${AVAILIBALITY_LOCATION_PORT:-8086}"
     depends_on:
       - api-gateway-internal
+      - provider-trails
+      - provider-weather
     networks:
       - soa-net
 

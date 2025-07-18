@@ -7,21 +7,24 @@ RUN echo "PROVIDER_WEATHER_PORT is: ${PROVIDER_WEATHER_PORT:-NOT SET}"
 # Imposto la cartella di lavoro
 WORKDIR /build
 
-# Copio solo la cartella con il progetto Maven
-COPY app/provider-weather ./provider-weather
+# Copia solo i file necessari per la compilazione
+COPY app/provider-weather/pom.xml ./provider-weather/
+COPY app/provider-weather/src ./provider-weather/src/
 
 # Entro nella directory e compilo
 WORKDIR /build/provider-weather
 
-RUN mvn clean package
+# Build con caching delle dipendenze
+RUN mvn dependency:go-offline
+RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime
 FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-# Copio il JAR dalla build
-COPY --from=build /build/provider-weather/target/provider_weather-*.jar app.jar
+# Copio il JAR dalla build (con nome fisso)
+COPY --from=build /build/provider-weather/target/provider-weather-*.jar ./app.jar
 
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--server.port=8082"]
