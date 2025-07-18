@@ -1,7 +1,6 @@
 package com.soa.clientGui.controllers;
 
 import java.time.LocalDate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.soa.clientGui.model.TripPlannerResponseDTO;
 
 @Controller
@@ -26,13 +26,22 @@ public class HomeController {
   private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
   private final RestTemplate restTemplate;
+  // TRIP_PORT non è più usato direttamente per la chiamata a trip-planner,
+  // ma l'API_GATEWAY_URL lo userà internamente.
+  // Lo manteniamo solo per coerenza se dovesse servire altrove, altrimenti
+  // potresti rimuoverlo.
+  private final String TRIP_PORT; // Mantenuto per compatibilità, ma non usato direttamente per l'URL
+  private final String API_GATEWAY_URL; // Nuovo campo per l'URL base del Gateway
+  private final ObjectMapper objectMapper;
 
-  private final String TRIP_PORT;
+  public HomeController(RestTemplate restTemplate, ObjectMapper objectMapper) {
+        this.restTemplate = restTemplate;
+        this.objectMapper = objectMapper;
+        // Registra JavaTimeModule per la corretta serializzazione/deserializzazione di LocalDate/LocalDateTime
+        this.objectMapper.registerModule(new JavaTimeModule());
 
-  public HomeController(RestTemplate restTemplate) {
-    this.restTemplate = restTemplate;
-    this.TRIP_PORT = System.getenv("TRIP_PLANNER_PORT");
-  }
+        // Carica la porta del trip-planner (utile se lo chiamassi direttamente o per log)
+        this.TRIP_PORT = System.getenv("TRIP_PLANNER_PORT") != null ? System.getenv("TRIP_PLANNER_PORT") : "8090";
 
   @GetMapping("/home")
   public String showHome() {
@@ -94,5 +103,6 @@ public class HomeController {
       model.addAttribute("messageError", "Errore nella richiesta al trip-planner");
       return "homepage";
     }
+
   }
 }

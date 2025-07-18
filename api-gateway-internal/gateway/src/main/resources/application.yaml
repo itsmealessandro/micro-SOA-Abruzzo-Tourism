@@ -8,32 +8,56 @@ spring:
         webflux:
           routes:
             - id: provider-trails
-              uri: http://provider-trails:8081
+              uri: http://provider-trails:${PROVIDER_TRAILS_PORT}
               predicates:
                 - Path=/trails-api/**
+              filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
+                - RewritePath=/trails-api/(?<segment>.*), /${segment} # Rimuove /trails-api/ dal percorso
 
-            - id: weather-provider
-              uri: http://localhost:8082
+            - id: provider-weather
+              uri: http://provider-weather:${PROVIDER_WEATHER_PORT}
               predicates:
                 - Path=/weather-api/**
+              filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
+                - RewritePath=/weather-api/(?<segment>.*), /${segment} # Rimuove /weather-api/ dal percorso
 
-            - id: events-service
-              uri: http://provider-events:8084
+            - id: provider-events
+              uri: http://provider-events:${PROVIDER_EVENTS_PORT}
               predicates:
                 - Path=/events-api/**
+              filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
+                - RewritePath=/events-api/(?<segment>.*), /${segment} # Rimuove /events-api/ dal percorso
 
-            - id: food-service
-              uri: http://provider-food:8083
+            - id: provider-food
+              uri: http://provider-food:${PROVIDER_FOOD_PORT}
               predicates:
                 - Path=/food-api/**
+              filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
+                - RewritePath=/food-api/(?<segment>.*), /${segment} # Rimuove /food-api/ dal percorso
 
-            - id: locationAvailability
-              uri: http://locationAvailability
-              predicates:
-                - Path=/itinerary-api/**
-
-            - id: tripPlanner
-              uri: http://tripPlanner
+            - id: location-availability
+              uri: http://location-availability:${AVAILIBALITY_LOCATION_PORT}
               predicates:
                 - Path=/availability-api/**
+              filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
+                - RewritePath=/availability-api/(?<segment>.*), /${segment} # Rimuove /availability-api/ dal percorso
 
+            - id: trip-planner-api # Nuovo ID per la rotta specifica del trip-planner
+              uri: http://trip-planner:${TRIP_PLANNER_PORT}
+              predicates:
+                - Path=/trip-planner-api/** # Il prefisso che il client-gui userà per chiamare il trip-planner
+              filters:
+                - RewritePath=/trip-planner-api/(?<segment>.*), /${segment} # Rimuove /trip-planner-api/ prima di inoltrare a trip-planner
+
+
+            # Rotta per il servizio tripPlanner (il tuo frontend web)
+            # QUESTA È LA ROTTA PIÙ GENERICA E DEVE ESSERE L'ULTIMA NELLA LISTA
+            - id: tripPlanner
+              uri: http://trip-planner:${TRIP_PLANNER_PORT}
+              predicates:
+                - Path=/**
+                - Path=/trails-api/**.negate=true
+                - Path=/weather-api/**.negate=true
+                - Path=/events-api/**.negate=true
+                - Path=/food-api/**.negate=true
+                - Path=/availability-api/**.negate=true

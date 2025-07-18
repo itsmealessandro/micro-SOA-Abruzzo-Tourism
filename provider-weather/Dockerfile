@@ -1,6 +1,10 @@
 # Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
+ARG PROVIDER_WEATHER_PORT
+RUN echo "PROVIDER_WEATHER_PORT is: ${PROVIDER_WEATHER_PORT:-NOT SET}"
+
+# Imposto la cartella di lavoro
 WORKDIR /build
 
 # Copia solo i file necessari per la compilazione
@@ -22,6 +26,5 @@ WORKDIR /app
 # Copio il JAR dalla build (con nome fisso)
 COPY --from=build /build/provider-weather/target/provider-weather-*.jar ./app.jar
 
-EXPOSE 8082
 
 ENTRYPOINT ["java", "-jar", "app.jar", "--server.port=8082"]

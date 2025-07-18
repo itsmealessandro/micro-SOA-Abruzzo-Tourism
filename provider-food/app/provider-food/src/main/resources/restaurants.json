@@ -1,27 +1,1802 @@
 [
   {
-    "name": "Ristorante Da Mario",
-    "location": "Pescara",
-    "specialties": ["Spaghetti alle vongole", "Fritto misto", "Brodetto alla pescarese"]
+    "name": "Ristorante Bella Italia 1",
+    "location": "Torino",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Calzone",
+      "Parmigiana di melanzane"
+    ]
   },
   {
-    "name": "Trattoria Romana",
-    "location": "Roma",
-    "specialties": ["Carbonara", "Cacio e pepe", "Saltimbocca alla romana"]
+    "name": "Osteria Vecchia 2",
+    "location": "Firenze",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Calzone",
+      "Gnocchi con sugo d'anatra"
+    ]
   },
   {
-    "name": "Pizzeria Napoli",
-    "location": "Napoli",
-    "specialties": ["Pizza Margherita", "Pizza Marinara", "Calzone"]
+    "name": "Trattoria Romana 3",
+    "location": "Milano",
+    "specialties": [
+      "Pizza Margherita",
+      "Calzone",
+      "Saltimbocca alla romana"
+    ]
   },
   {
-    "name": "Ristorante Abruzzese",
+    "name": "Ristorante Abruzzese 4",
     "location": "Chieti",
-    "specialties": ["Arrosticini", "Scrippelle 'mbusse", "Maltagliati con i fagioli"]
+    "specialties": [
+      "Baccalà alla vicentina",
+      "Brodetto alla pescarese",
+      "Pizza Margherita"
+    ]
   },
   {
-    "name": "Osteria Vecchia",
+    "name": "Trattoria Romana 5",
+    "location": "Roma",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Baccalà alla vicentina",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 6",
+    "location": "Roma",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Gnocchi con sugo d'anatra",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 7",
+    "location": "Napoli",
+    "specialties": [
+      "Fritto misto",
+      "Brodetto alla pescarese",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 8",
+    "location": "Firenze",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Baccalà alla vicentina",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 9",
+    "location": "Milano",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Baccalà alla vicentina",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 10",
+    "location": "Bologna",
+    "specialties": [
+      "Arrosticini",
+      "Maltagliati con i fagioli",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 11",
+    "location": "Bologna",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Gnocchi con sugo d'anatra",
+      "Agnello al forno"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 12",
+    "location": "Napoli",
+    "specialties": [
+      "Fritto misto",
+      "Cacio e pepe",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 13",
+    "location": "Milano",
+    "specialties": [
+      "Spaghetti alle vongole",
+      "Agnello al forno",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 14",
+    "location": "Roma",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Scrippelle 'mbusse",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 15",
     "location": "Pescara",
-    "specialties": ["Gnocchi con sugo d'anatra", "Agnello al forno"]
+    "specialties": [
+      "Pizza Marinara",
+      "Cacio e pepe",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 16",
+    "location": "Bari",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Risotto ai frutti di mare",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 17",
+    "location": "Chieti",
+    "specialties": [
+      "Fritto misto",
+      "Calzone",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 18",
+    "location": "Bari",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Cacio e pepe",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 19",
+    "location": "Milano",
+    "specialties": [
+      "Fritto misto",
+      "Agnello al forno",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 20",
+    "location": "Torino",
+    "specialties": [
+      "Carbonara",
+      "Pizza Marinara",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 21",
+    "location": "Bologna",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Pizza Margherita",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 22",
+    "location": "Firenze",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Baccalà alla vicentina",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 23",
+    "location": "Firenze",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Agnello al forno",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 24",
+    "location": "Palermo",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Brodetto alla pescarese",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 25",
+    "location": "Firenze",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Gnocchi con sugo d'anatra",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 26",
+    "location": "Palermo",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Tagliatelle al ragù",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 27",
+    "location": "Palermo",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Spaghetti alle vongole",
+      "Agnello al forno"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 28",
+    "location": "Bari",
+    "specialties": [
+      "Agnello al forno",
+      "Gnocchi con sugo d'anatra",
+      "Risotto ai frutti di mare"
+    ]
+  },
+  {
+    "name": "Osteria Antica 29",
+    "location": "Torino",
+    "specialties": [
+      "Baccalà alla vicentina",
+      "Tagliatelle al ragù",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 30",
+    "location": "Firenze",
+    "specialties": [
+      "Fritto misto",
+      "Carbonara",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 31",
+    "location": "Bari",
+    "specialties": [
+      "Agnello al forno",
+      "Risotto ai frutti di mare",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 32",
+    "location": "Milano",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Pizza Marinara",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 33",
+    "location": "Napoli",
+    "specialties": [
+      "Pizza Margherita",
+      "Risotto ai frutti di mare",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 34",
+    "location": "Napoli",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Scrippelle 'mbusse",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 35",
+    "location": "Firenze",
+    "specialties": [
+      "Agnello al forno",
+      "Scrippelle 'mbusse",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 36",
+    "location": "Pescara",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Calzone",
+      "Agnello al forno"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 37",
+    "location": "Firenze",
+    "specialties": [
+      "Agnello al forno",
+      "Tagliatelle al ragù",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 38",
+    "location": "Firenze",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Pizza Marinara",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 39",
+    "location": "Bologna",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Maltagliati con i fagioli",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 40",
+    "location": "Roma",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Pizza Marinara",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 41",
+    "location": "Napoli",
+    "specialties": [
+      "Agnello al forno",
+      "Brodetto alla pescarese",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 42",
+    "location": "Bari",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Gnocchi con sugo d'anatra",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 43",
+    "location": "Palermo",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Agnello al forno",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 44",
+    "location": "Pescara",
+    "specialties": [
+      "Arrosticini",
+      "Saltimbocca alla romana",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Osteria Antica 45",
+    "location": "Bari",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Risotto ai frutti di mare",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 46",
+    "location": "Bari",
+    "specialties": [
+      "Calzone",
+      "Maltagliati con i fagioli",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 47",
+    "location": "Napoli",
+    "specialties": [
+      "Pizza Margherita",
+      "Risotto ai frutti di mare",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 48",
+    "location": "Torino",
+    "specialties": [
+      "Spaghetti alle vongole",
+      "Arrosticini",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 49",
+    "location": "Torino",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Parmigiana di melanzane",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 50",
+    "location": "Palermo",
+    "specialties": [
+      "Arrosticini",
+      "Agnello al forno",
+      "Spaghetti alle vongole"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 51",
+    "location": "Napoli",
+    "specialties": [
+      "Agnello al forno",
+      "Pizza Margherita",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 52",
+    "location": "Roma",
+    "specialties": [
+      "Fritto misto",
+      "Calzone",
+      "Spaghetti alle vongole"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 53",
+    "location": "Pescara",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Scrippelle 'mbusse",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 54",
+    "location": "Chieti",
+    "specialties": [
+      "Cacio e pepe",
+      "Risotto ai frutti di mare",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 55",
+    "location": "Chieti",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Arrosticini",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 56",
+    "location": "Bari",
+    "specialties": [
+      "Pizza Marinara",
+      "Maltagliati con i fagioli",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 57",
+    "location": "Milano",
+    "specialties": [
+      "Pizza Marinara",
+      "Scrippelle 'mbusse",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 58",
+    "location": "Bologna",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Parmigiana di melanzane",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 59",
+    "location": "Chieti",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Maltagliati con i fagioli",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 60",
+    "location": "Bari",
+    "specialties": [
+      "Fritto misto",
+      "Maltagliati con i fagioli",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 61",
+    "location": "Pescara",
+    "specialties": [
+      "Fritto misto",
+      "Saltimbocca alla romana",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 62",
+    "location": "Pescara",
+    "specialties": [
+      "Pizza Marinara",
+      "Risotto ai frutti di mare",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 63",
+    "location": "Bari",
+    "specialties": [
+      "Agnello al forno",
+      "Pizza Margherita",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 64",
+    "location": "Pescara",
+    "specialties": [
+      "Agnello al forno",
+      "Arrosticini",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 65",
+    "location": "Firenze",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Parmigiana di melanzane",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 66",
+    "location": "Bologna",
+    "specialties": [
+      "Cacio e pepe",
+      "Arrosticini",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 67",
+    "location": "Milano",
+    "specialties": [
+      "Spaghetti alle vongole",
+      "Cacio e pepe",
+      "Agnello al forno"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 68",
+    "location": "Bologna",
+    "specialties": [
+      "Baccalà alla vicentina",
+      "Carbonara",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 69",
+    "location": "Milano",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Pizza Marinara",
+      "Spaghetti alle vongole"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 70",
+    "location": "Chieti",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Pizza Marinara",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 71",
+    "location": "Firenze",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Arrosticini",
+      "Risotto ai frutti di mare"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 72",
+    "location": "Firenze",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Baccalà alla vicentina",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 73",
+    "location": "Pescara",
+    "specialties": [
+      "Fritto misto",
+      "Saltimbocca alla romana",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 74",
+    "location": "Pescara",
+    "specialties": [
+      "Arrosticini",
+      "Parmigiana di melanzane",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 75",
+    "location": "Torino",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Risotto ai frutti di mare",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 76",
+    "location": "Palermo",
+    "specialties": [
+      "Pizza Margherita",
+      "Carbonara",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 77",
+    "location": "Milano",
+    "specialties": [
+      "Fritto misto",
+      "Pizza Marinara",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 78",
+    "location": "Roma",
+    "specialties": [
+      "Agnello al forno",
+      "Parmigiana di melanzane",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 79",
+    "location": "Roma",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Saltimbocca alla romana",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 80",
+    "location": "Chieti",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Baccalà alla vicentina",
+      "Spaghetti alle vongole"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 81",
+    "location": "Milano",
+    "specialties": [
+      "Cacio e pepe",
+      "Saltimbocca alla romana",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 82",
+    "location": "Torino",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Calzone",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 83",
+    "location": "Bologna",
+    "specialties": [
+      "Pizza Marinara",
+      "Arrosticini",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 84",
+    "location": "Torino",
+    "specialties": [
+      "Carbonara",
+      "Baccalà alla vicentina",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 85",
+    "location": "Napoli",
+    "specialties": [
+      "Baccalà alla vicentina",
+      "Carbonara",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 86",
+    "location": "Chieti",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Calzone",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 87",
+    "location": "Napoli",
+    "specialties": [
+      "Cacio e pepe",
+      "Tagliatelle al ragù",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Osteria Antica 88",
+    "location": "Palermo",
+    "specialties": [
+      "Agnello al forno",
+      "Calzone",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 89",
+    "location": "Roma",
+    "specialties": [
+      "Arrosticini",
+      "Risotto ai frutti di mare",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 90",
+    "location": "Pescara",
+    "specialties": [
+      "Pizza Marinara",
+      "Pizza Margherita",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Osteria Antica 91",
+    "location": "Roma",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Maltagliati con i fagioli",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 92",
+    "location": "Firenze",
+    "specialties": [
+      "Arrosticini",
+      "Gnocchi con sugo d'anatra",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 93",
+    "location": "Milano",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Spaghetti alle vongole",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 94",
+    "location": "Bari",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Fritto misto",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 95",
+    "location": "Bari",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Fritto misto",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 96",
+    "location": "Milano",
+    "specialties": [
+      "Arrosticini",
+      "Fritto misto",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Osteria Antica 97",
+    "location": "Torino",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Scrippelle 'mbusse",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 98",
+    "location": "Bologna",
+    "specialties": [
+      "Fritto misto",
+      "Agnello al forno",
+      "Spaghetti alle vongole"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 99",
+    "location": "Chieti",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Fritto misto",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 100",
+    "location": "Napoli",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Arrosticini",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 101",
+    "location": "Pescara",
+    "specialties": [
+      "Arrosticini",
+      "Tagliatelle al ragù",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 102",
+    "location": "Palermo",
+    "specialties": [
+      "Pizza Margherita",
+      "Spaghetti alle vongole",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 103",
+    "location": "Milano",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Fritto misto",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 104",
+    "location": "Napoli",
+    "specialties": [
+      "Fritto misto",
+      "Saltimbocca alla romana",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 105",
+    "location": "Roma",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Cacio e pepe",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 106",
+    "location": "Firenze",
+    "specialties": [
+      "Carbonara",
+      "Maltagliati con i fagioli",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 107",
+    "location": "Milano",
+    "specialties": [
+      "Arrosticini",
+      "Baccalà alla vicentina",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 108",
+    "location": "Palermo",
+    "specialties": [
+      "Carbonara",
+      "Scrippelle 'mbusse",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 109",
+    "location": "Milano",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Arrosticini",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 110",
+    "location": "Bologna",
+    "specialties": [
+      "Carbonara",
+      "Calzone",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 111",
+    "location": "Milano",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Tagliatelle al ragù",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 112",
+    "location": "Torino",
+    "specialties": [
+      "Arrosticini",
+      "Brodetto alla pescarese",
+      "Risotto ai frutti di mare"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 113",
+    "location": "Bari",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Carbonara",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 114",
+    "location": "Roma",
+    "specialties": [
+      "Pizza Marinara",
+      "Scrippelle 'mbusse",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 115",
+    "location": "Bari",
+    "specialties": [
+      "Agnello al forno",
+      "Brodetto alla pescarese",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 116",
+    "location": "Milano",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Spaghetti alle vongole",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 117",
+    "location": "Pescara",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Calzone",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 118",
+    "location": "Roma",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Brodetto alla pescarese",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 119",
+    "location": "Bologna",
+    "specialties": [
+      "Pizza Margherita",
+      "Tagliatelle al ragù",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 120",
+    "location": "Bologna",
+    "specialties": [
+      "Pizza Marinara",
+      "Maltagliati con i fagioli",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 121",
+    "location": "Bologna",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Arrosticini",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 122",
+    "location": "Bologna",
+    "specialties": [
+      "Calzone",
+      "Risotto ai frutti di mare",
+      "Agnello al forno"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 123",
+    "location": "Milano",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Cacio e pepe",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 124",
+    "location": "Torino",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Risotto ai frutti di mare",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 125",
+    "location": "Torino",
+    "specialties": [
+      "Carbonara",
+      "Parmigiana di melanzane",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 126",
+    "location": "Chieti",
+    "specialties": [
+      "Pizza Marinara",
+      "Saltimbocca alla romana",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Osteria Antica 127",
+    "location": "Bari",
+    "specialties": [
+      "Carbonara",
+      "Arrosticini",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 128",
+    "location": "Roma",
+    "specialties": [
+      "Arrosticini",
+      "Tagliatelle al ragù",
+      "Agnello al forno"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 129",
+    "location": "Palermo",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Pizza Marinara",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 130",
+    "location": "Firenze",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Baccalà alla vicentina",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 131",
+    "location": "Roma",
+    "specialties": [
+      "Cacio e pepe",
+      "Maltagliati con i fagioli",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 132",
+    "location": "Firenze",
+    "specialties": [
+      "Cacio e pepe",
+      "Carbonara",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Taverna Toscana 133",
+    "location": "Bologna",
+    "specialties": [
+      "Pizza Marinara",
+      "Carbonara",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 134",
+    "location": "Torino",
+    "specialties": [
+      "Agnello al forno",
+      "Pizza Marinara",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 135",
+    "location": "Chieti",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Risotto ai frutti di mare",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 136",
+    "location": "Bologna",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Carbonara",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 137",
+    "location": "Bologna",
+    "specialties": [
+      "Pizza Margherita",
+      "Agnello al forno",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 138",
+    "location": "Milano",
+    "specialties": [
+      "Cacio e pepe",
+      "Fritto misto",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Osteria Antica 139",
+    "location": "Palermo",
+    "specialties": [
+      "Agnello al forno",
+      "Fritto misto",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 140",
+    "location": "Firenze",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Maltagliati con i fagioli",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 141",
+    "location": "Bari",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Saltimbocca alla romana",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 142",
+    "location": "Firenze",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Arrosticini",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 143",
+    "location": "Pescara",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Scrippelle 'mbusse",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 144",
+    "location": "Torino",
+    "specialties": [
+      "Arrosticini",
+      "Risotto ai frutti di mare",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 145",
+    "location": "Firenze",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Risotto ai frutti di mare",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 146",
+    "location": "Firenze",
+    "specialties": [
+      "Spaghetti alle vongole",
+      "Parmigiana di melanzane",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 147",
+    "location": "Milano",
+    "specialties": [
+      "Calzone",
+      "Risotto ai frutti di mare",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 148",
+    "location": "Bari",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Agnello al forno",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 149",
+    "location": "Milano",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Cacio e pepe",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 150",
+    "location": "Milano",
+    "specialties": [
+      "Carbonara",
+      "Brodetto alla pescarese",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 151",
+    "location": "Torino",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Risotto ai frutti di mare",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 152",
+    "location": "Roma",
+    "specialties": [
+      "Arrosticini",
+      "Baccalà alla vicentina",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 153",
+    "location": "Bari",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Risotto ai frutti di mare",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 154",
+    "location": "Roma",
+    "specialties": [
+      "Cacio e pepe",
+      "Pizza Margherita",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 155",
+    "location": "Milano",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Risotto ai frutti di mare",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 156",
+    "location": "Bari",
+    "specialties": [
+      "Calzone",
+      "Brodetto alla pescarese",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 157",
+    "location": "Palermo",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Pizza Margherita",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 158",
+    "location": "Bologna",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Gnocchi con sugo d'anatra",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 159",
+    "location": "Bari",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Cacio e pepe",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Ristorante Al Duomo 160",
+    "location": "Milano",
+    "specialties": [
+      "Agnello al forno",
+      "Parmigiana di melanzane",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Pizzeria Vesuvio 161",
+    "location": "Roma",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Tagliatelle al ragù",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 162",
+    "location": "Bari",
+    "specialties": [
+      "Arrosticini",
+      "Pizza Margherita",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 163",
+    "location": "Pescara",
+    "specialties": [
+      "Pizza Marinara",
+      "Baccalà alla vicentina",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Osteria Antica 164",
+    "location": "Napoli",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Gnocchi con sugo d'anatra",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Osteria Antica 165",
+    "location": "Milano",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Maltagliati con i fagioli",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 166",
+    "location": "Roma",
+    "specialties": [
+      "Cacio e pepe",
+      "Gnocchi con sugo d'anatra",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 167",
+    "location": "Torino",
+    "specialties": [
+      "Pizza Margherita",
+      "Carbonara",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 168",
+    "location": "Torino",
+    "specialties": [
+      "Spaghetti alle vongole",
+      "Baccalà alla vicentina",
+      "Arrosticini"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 169",
+    "location": "Firenze",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Saltimbocca alla romana",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 170",
+    "location": "Bari",
+    "specialties": [
+      "Pizza Marinara",
+      "Fritto misto",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 171",
+    "location": "Firenze",
+    "specialties": [
+      "Cacio e pepe",
+      "Tagliatelle al ragù",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 172",
+    "location": "Firenze",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Scrippelle 'mbusse",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 173",
+    "location": "Bologna",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Cacio e pepe",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 174",
+    "location": "Palermo",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Agnello al forno",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 175",
+    "location": "Firenze",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Brodetto alla pescarese",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 176",
+    "location": "Firenze",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Arrosticini",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Taverna del Borgo 177",
+    "location": "Milano",
+    "specialties": [
+      "Pizza Margherita",
+      "Maltagliati con i fagioli",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Ristorante Mediterraneo 178",
+    "location": "Torino",
+    "specialties": [
+      "Agnello al forno",
+      "Scrippelle 'mbusse",
+      "Carbonara"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 179",
+    "location": "Torino",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Calzone",
+      "Risotto ai frutti di mare"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 180",
+    "location": "Napoli",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Pizza Margherita",
+      "Gnocchi con sugo d'anatra"
+    ]
+  },
+  {
+    "name": "Osteria Antica 181",
+    "location": "Pescara",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Baccalà alla vicentina",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Locanda del Mare 182",
+    "location": "Napoli",
+    "specialties": [
+      "Arrosticini",
+      "Brodetto alla pescarese",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 183",
+    "location": "Firenze",
+    "specialties": [
+      "Gnocchi con sugo d'anatra",
+      "Pizza Margherita",
+      "Cacio e pepe"
+    ]
+  },
+  {
+    "name": "Osteria Antica 184",
+    "location": "Pescara",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Maltagliati con i fagioli",
+      "Pizza Marinara"
+    ]
+  },
+  {
+    "name": "Trattoria del Corso 185",
+    "location": "Bari",
+    "specialties": [
+      "Saltimbocca alla romana",
+      "Calzone",
+      "Tagliatelle al ragù"
+    ]
+  },
+  {
+    "name": "Osteria Vecchia 186",
+    "location": "Firenze",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Baccalà alla vicentina",
+      "Calzone"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 187",
+    "location": "Bari",
+    "specialties": [
+      "Brodetto alla pescarese",
+      "Fritto misto",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Osteria Antica 188",
+    "location": "Chieti",
+    "specialties": [
+      "Pizza Margherita",
+      "Gnocchi con sugo d'anatra",
+      "Maltagliati con i fagioli"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 189",
+    "location": "Bari",
+    "specialties": [
+      "Calzone",
+      "Arrosticini",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 190",
+    "location": "Bologna",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Parmigiana di melanzane",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Pizzeria Partenope 191",
+    "location": "Torino",
+    "specialties": [
+      "Baccalà alla vicentina",
+      "Pizza Marinara",
+      "Fritto misto"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 192",
+    "location": "Chieti",
+    "specialties": [
+      "Parmigiana di melanzane",
+      "Baccalà alla vicentina",
+      "Scrippelle 'mbusse"
+    ]
+  },
+  {
+    "name": "Trattoria Romana 193",
+    "location": "Milano",
+    "specialties": [
+      "Baccalà alla vicentina",
+      "Risotto ai frutti di mare",
+      "Saltimbocca alla romana"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 194",
+    "location": "Pescara",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Gnocchi con sugo d'anatra",
+      "Brodetto alla pescarese"
+    ]
+  },
+  {
+    "name": "Ristorante Gustoso 195",
+    "location": "Firenze",
+    "specialties": [
+      "Scrippelle 'mbusse",
+      "Tagliatelle al ragù",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Ristorante Abruzzese 196",
+    "location": "Bari",
+    "specialties": [
+      "Tagliatelle al ragù",
+      "Maltagliati con i fagioli",
+      "Spaghetti alle vongole"
+    ]
+  },
+  {
+    "name": "Pizzeria Napoli 197",
+    "location": "Bari",
+    "specialties": [
+      "Carbonara",
+      "Risotto ai frutti di mare",
+      "Baccalà alla vicentina"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 198",
+    "location": "Milano",
+    "specialties": [
+      "Maltagliati con i fagioli",
+      "Agnello al forno",
+      "Parmigiana di melanzane"
+    ]
+  },
+  {
+    "name": "Ristorante Bella Italia 199",
+    "location": "Roma",
+    "specialties": [
+      "Risotto ai frutti di mare",
+      "Spaghetti alle vongole",
+      "Pizza Margherita"
+    ]
+  },
+  {
+    "name": "Ristorante Da Mario 200",
+    "location": "Torino",
+    "specialties": [
+      "Fritto misto",
+      "Brodetto alla pescarese",
+      "Carbonara"
+    ]
   }
 ]

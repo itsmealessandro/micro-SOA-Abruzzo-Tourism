@@ -1,4 +1,7 @@
 FROM maven:3.9.9-eclipse-temurin-21 AS build
+
+ARG API_GATEWAY_INTERNAL_PORT
+RUN echo "API_GATEWAY_INTERNAL_PORT is: ${API_GATEWAY_INTERNAL_PORT:-NOT SET}"
  
 WORKDIR /gat_build
 
@@ -16,6 +19,5 @@ WORKDIR ./gateway/
 
 COPY --from=build /gat_build/gateway/target/gateway-*.jar app.jar
 
-EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

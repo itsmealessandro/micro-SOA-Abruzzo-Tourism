@@ -22,8 +22,25 @@ public class EventService {
     private static final Logger logger = LoggerFactory.getLogger(EventService.class);
 
     private final RestTemplate restTemplate;
-    // URL for the events service. 
-    private static final String EVENTS_URL = "http://provider-events:8084/events/by-location-and-date?location={location}&date={date}";
+
+    // *** MODIFICA QUI: L'URL PUNTA AL GATEWAY ***
+    // Se tripPlanner e Gateway sono nello stesso network Docker, puoi usare il nome del servizio Gateway.
+    // Altrimenti, se tripPlanner gira fuori Docker e Gateway in Docker, potresti usare localhost:8080
+    // L'URL dovrebbe essere: Gateway_Base_URL + Predicate_Path_for_Events + Specific_Events_Endpoint
+    // Basandoci sulla tua configurazione del Gateway: /events-api/**
+    private static final String EVENTS_API_BASE_PATH = "/events-api"; // Il prefisso configurato nel Gateway
+    private static final String EVENTS_SERVICE_ENDPOINT = "/events/by-location-and-date"; // L'endpoint del provider-events
+    // Costruisci l'URL completo che passa attraverso il Gateway
+    // Se tripPlanner e api-gateway-internal sono nella stessa rete Docker, usa il nome del servizio del gateway.
+    // Altrimenti, se stai testando in locale e api-gateway-internal è su localhost:8080, usa "http://localhost:8080"
+    private static final String GATEWAY_BASE_URL = "http://api-gateway-internal:8080"; // Esempio per Docker Compose
+    // Oppure, se configuri la base URL del Gateway via proprietà, rendila dinamica:
+    // @Value("${gateway.base.url}") private String gatewayBaseUrl;
+    // e poi usa String.format("%s%s%s", gatewayBaseUrl, EVENTS_API_BASE_PATH, EVENTS_SERVICE_ENDPOINT);
+
+
+    private static final String EVENTS_URL = GATEWAY_BASE_URL + EVENTS_API_BASE_PATH + EVENTS_SERVICE_ENDPOINT + "?location={location}&date={date}";
+
 
     public EventService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
