@@ -31,17 +31,21 @@ public class HomeController {
   // Lo manteniamo solo per coerenza se dovesse servire altrove, altrimenti
   // potresti rimuoverlo.
   private final String TRIP_PORT; // Mantenuto per compatibilità, ma non usato direttamente per l'URL
-  private final String API_GATEWAY_URL; // Nuovo campo per l'URL base del Gateway
+  // private final String API_GATEWAY_URL; // Nuovo campo per l'URL base del
+  // Gateway
   private final ObjectMapper objectMapper;
 
   public HomeController(RestTemplate restTemplate, ObjectMapper objectMapper) {
-        this.restTemplate = restTemplate;
-        this.objectMapper = objectMapper;
-        // Registra JavaTimeModule per la corretta serializzazione/deserializzazione di LocalDate/LocalDateTime
-        this.objectMapper.registerModule(new JavaTimeModule());
+    this.restTemplate = restTemplate;
+    this.objectMapper = objectMapper;
+    // Registra JavaTimeModule per la corretta serializzazione/deserializzazione di
+    // LocalDate/LocalDateTime
+    this.objectMapper.registerModule(new JavaTimeModule());
 
-        // Carica la porta del trip-planner (utile se lo chiamassi direttamente o per log)
-        this.TRIP_PORT = System.getenv("TRIP_PLANNER_PORT") != null ? System.getenv("TRIP_PLANNER_PORT") : "8090";
+    // Carica la porta del trip-planner (utile se lo chiamassi direttamente o per
+    // log)
+    this.TRIP_PORT = System.getenv("TRIP_PLANNER_PORT") != null ? System.getenv("TRIP_PLANNER_PORT") : "8090";
+  }
 
   @GetMapping("/home")
   public String showHome() {
