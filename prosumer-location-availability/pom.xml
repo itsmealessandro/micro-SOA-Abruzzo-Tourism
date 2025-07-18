@@ -61,6 +61,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+    <groupId>com.sun.xml.ws</groupId>
+    <artifactId>jaxws-rt</artifactId>
+    <version>4.0.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -83,6 +89,27 @@
           <release>${java.version}</release>
         </configuration>
       </plugin>
+
+        <!-- Nel pom.xml di location-availability -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jaxws-maven-plugin</artifactId>
+            <version>2.6</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>wsimport</goal>
+                    </goals>
+                    <configuration>
+                        <wsdlUrls>
+                            <wsdlUrl>http://provider-weather:8082/soap-api/weather?wsdl</wsdlUrl>
+                        </wsdlUrls>
+                        <packageName>com.example.locationavailability.client.weather</packageName>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
   </build>
+
 </project>
