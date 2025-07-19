@@ -1,102 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version>
+        <version>3.5.3</version> 
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    
-    <groupId>com.example</groupId>
+    <groupId>com.example</groupId> <!-- Mantenuto il tuo groupId originale -->
     <artifactId>provider-weather</artifactId>
     <version>1.0.0</version>
     <name>Weather Provider</name>
+    <description>Weather Provider service for the micro-SOA-Abruzzo-Tourism project</description>
 
     <properties>
-    <java.version>17</java.version>
-    <cxf.version>4.0.0</cxf.version> <!-- Usa CXF 4.x per Jakarta EE 9+ -->
+        <java.version>21</java.version> 
+        <cxf.version>4.0.4</cxf.version> <!-- Versione stabile CXF 4.x per Jakarta EE 9+ -->
     </properties>
 
     <dependencies>
-
-     <!-- Jakarta EE Web Services API -->
-    <dependency>
-        <groupId>jakarta.jws</groupId>
-        <artifactId>jakarta.jws-api</artifactId>
-        <version>3.0.0</version>
-    </dependency>
-    
-    <!-- Jakarta XML Web Services API -->
-    <dependency>
-        <groupId>jakarta.xml.ws</groupId>
-        <artifactId>jakarta.xml.ws-api</artifactId>
-        <version>4.0.0</version>
-    </dependency>
-    
-    <!-- Implementazione JAX-WS per CXF -->
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-        <version>4.0.0</version>
-    </dependency>
-
-
-    <!-- Jakarta EE Web Services API -->
-    <dependency>
-        <groupId>jakarta.xml.ws</groupId>
-        <artifactId>jakarta.xml.ws-api</artifactId>
-        <version>4.0.0</version>
-    </dependency>
-    
-    <!-- Implementazione JAX-WS per CXF -->
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-frontend-jaxws</artifactId>
-        <version>${cxf.version}</version>
-    </dependency>
-    
-    <!-- Core CXF -->
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-core</artifactId>
-        <version>${cxf.version}</version>
-    </dependency>
-        <!-- Spring Boot -->
+        <!-- Spring Boot Starter Web (necessario per il server web embedded e endpoint REST come /test) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        
-        <!-- Apache CXF SOAP -->
+
+        <!-- Apache CXF Spring Boot Starter per JAX-WS (Servizi SOAP) -->
+        <!-- Questa è la dipendenza principale che include molte delle dipendenze CXF necessarie -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
             <version>${cxf.version}</version>
         </dependency>
 
+        <!-- Dipendenze Jakarta EE (JAX-WS e JAXB) - Essenziali per Java 11+ e Spring Boot 3+ -->
+        <!-- Rimpiazzano le API rimosse dal JDK -->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-            <version>${cxf.version}</version>
+            <groupId>jakarta.jws</groupId>
+            <artifactId>jakarta.jws-api</artifactId>
+            <version>3.0.0</version> <!-- Versione compatibile con Jakarta EE 9/10 -->
         </dependency>
-        
-        <!-- Testing -->
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+            <version>4.0.1</version> <!-- Versione più recente e compatibile -->
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.1</version> <!-- Versione più recente e compatibile -->
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>4.0.5</version> <!-- Implementazione JAXB -->
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>4.0.1</version> <!-- Runtime JAX-WS -->
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Lombok (includilo solo se lo stai usando nel tuo progetto per @Data, ecc.) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Spring Boot Starter per i test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
+        <!-- springdoc-openapi-ui (Mantienilo solo se hai endpoint REST e vuoi la documentazione Swagger) -->
+        <!-- Se il servizio è puramente SOAP, puoi rimuoverlo -->
         <dependency>
-        <groupId>com.sun.xml.ws</groupId>
-        <artifactId>jaxws-rt</artifactId>
-        <version>4.0.0</version>
-        </dependency>
-
-        <dependency>
-        <groupId>org.springdoc</groupId>
-        <artifactId>springdoc-openapi-ui</artifactId>
-        <version>1.7.0</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version> <!-- Potrebbe essere necessario aggiornare questa versione per compatibilità con SB 3.5.3 -->
         </dependency>
 
     </dependencies>
@@ -106,7 +92,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- Aggiungi configurazione per Lombok se presente -->
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

@@ -17,10 +17,11 @@ spring:
             - id: provider-weather
               uri: http://provider-weather:${PROVIDER_WEATHER_PORT}
               predicates:
-                - Path=/weather-api/**
-              filters: # <-- AGGIUNGI QUESTO BLOCCO FILTRI
-                - RewritePath=/weather-api/(?<segment>.*), /${segment} # Rimuove /weather-api/ dal percorso
-
+                - Path=/weather-api/** # Il prefisso che il client userà per il servizio weather (REST-like)
+              filters:
+                # NUOVA CORREZIONE PER IL SERVIZIO SOAP: Il Path deve catturare '/weather'
+                # e poi riscriverlo all'endpoint SOAP completo '/soap-api/weather'
+                - RewritePath=/weather-api/weather(?<segment>.*), /soap-api/weather${segment} # <-- MODIFICA QUI
             - id: provider-events
               uri: http://provider-events:${PROVIDER_EVENTS_PORT}
               predicates:
