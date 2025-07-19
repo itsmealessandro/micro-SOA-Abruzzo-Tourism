@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ricerca Ristoranti Diretta</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        h1, h2, h3, h4, h5 { color: #0056b3; }
+        form { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input[type="text"] { width: calc(100% - 22px); padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .info-section { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: 20px; }
+        .success-message { color: green; background-color: #e6ffe6; border: 1px solid #00cc00; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+        .error-message { color: red; background-color: #ffe6e6; border: 1px solid #ff0000; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+        .restaurant-card { border: 1px solid #b3d9ff; padding: 15px; margin-bottom: 15px; border-radius: 5px; background-color: #e6f2ff; }
+        .menu-item { margin-left: 20px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 5px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: 0; height: 1px; background-color: #ccc; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Cerca Ristoranti Direttamente</h1>
+
+    <form action="/direct/food" method="get">
+        <label for="searchLocation">Località:</label>
+        <input type="text" id="searchLocation" name="location" required 
+               th:value="${requestedLocationForDirectCall != null ? requestedLocationForDirectCall : ''}" 
+               placeholder="Es. Sulmona, Pescara"><br><br>
+        <button type="submit">Cerca Ristoranti!</button>
+    </form>
+
+    <hr th:if="${requestedLocationForDirectCall != null and !requestedLocationForDirectCall.trim().isEmpty()}"> <div th:if="${requestedLocationForDirectCall != null and !requestedLocationForDirectCall.trim().isEmpty()}">
+
+        <div th:if="${directCallSuccess}" class="info-section success-message">
+            <h3><span th:text="${directCallSuccess}"></span></h3>
+            <p>Ristoranti trovati per la località: <strong><span th:text="${requestedLocationForDirectCall}"></span></strong></p>
+            
+            <div th:if="${!#lists.isEmpty(additionalRestaurantInfo)}">
+                <div th:each="restaurant : ${additionalRestaurantInfo}" class="restaurant-card">
+                    <h4>Ristorante: <span th:text="${restaurant.name}"></span> (<span th:text="${restaurant.location}"></span>)</h4>
+                    <p><strong>ID:</strong> <span th:text="${restaurant.id}"></span></p>
+                    <p><strong>Valutazione:</strong> <span th:text="${restaurant.rating}"></span>/5</p>
+                    <p><strong>Specialità:</strong> 
+                        <span th:each="spec, iterStat : ${restaurant.specialties}">
+                            <span th:text="${spec}"></span><span th:if="${!iterStat.last}">, </span>
+                        </span>
+                        <span th:if="${#lists.isEmpty(restaurant.specialties)}">N/A</span>
+                    </p>
+                    <p><strong>Tipo Cucina:</strong> <span th:text="${restaurant.cuisineType}"></span></p>
+                    
+                    <h5>Menu:</h5>
+                    <ul th:if="${!#lists.isEmpty(restaurant.menu)}">
+                        <li th:each="dish : ${restaurant.menu}" class="menu-item">
+                            <strong><span th:text="${dish.name}"></span></strong>: 
+                            <span th:text="${dish.description}"></span> - 
+                            <span th:text="${#numbers.formatDecimal(dish.price, 0, 2)}"></span>€
+                            <span th:if="${dish.vegetarian}" style="color: green; font-weight: bold;"> (Vegetariano)</span>
+                        </li>
+                    </ul>
+                    <p th:unless="${!#lists.isEmpty(restaurant.menu)}">Nessun elemento nel menu disponibile.</p>
+                </div>
+            </div>
+            <p th:unless="${!#lists.isEmpty(additionalRestaurantInfo)}">Nessun ristorante trovato per questa località.</p>
+        </div>
+        <div th:if="${directCallError}" class="info-section error-message">
+            <h3>Errore:</h3>
+            <p th:text="${directCallError}"></p>
+        </div>
+    </div>
+    <div th:unless="${requestedLocationForDirectCall != null and !requestedLocationForDirectCall.trim().isEmpty()}" class="info-section">
+        <p>Inserisci una località nel campo sopra e clicca "Cerca Ristoranti!" per visualizzare i risultati.</p>
+    </div>
+
+
+    <p><a href="/home">Torna alla Homepage Principale</a></p>
+
+</body>
+</html>
