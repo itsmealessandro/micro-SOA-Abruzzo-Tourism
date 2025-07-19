@@ -20,17 +20,11 @@ public class FoodService {
 
     private final RestTemplate restTemplate;
 
-    // *** MODIFICA QUI: L'URL PUNTA AL GATEWAY ***
     // L'URL dovrebbe essere: Gateway_Base_URL + Predicate_Path_for_Food + Specific_Food_Endpoint
-    // Basandoci sulla tua configurazione del Gateway: /food-api/**
+    // Basandoci sulla nostra configurazione del Gateway: /food-api/**
     private static final String FOOD_API_BASE_PATH = "/food-api"; // Il prefisso configurato nel Gateway
     private static final String FOOD_SERVICE_ENDPOINT = "/food/restaurants-with-menu"; // L'endpoint del provider-food
-
-    // Costruisci l'URL completo che passa attraverso il Gateway
-    // Se tripPlanner e api-gateway-internal sono nella stessa rete Docker, usa il nome del servizio del gateway.
-    // Altrimenti, se stai testando in locale e api-gateway-internal è su localhost:8080, usa "http://localhost:8080"
-    private static final String GATEWAY_BASE_URL = "http://api-gateway-internal:8080"; // Esempio per Docker Compose
-
+    private static final String GATEWAY_BASE_URL = "http://api-gateway-internal:8080"; 
 
     private static final String FOOD_URL = GATEWAY_BASE_URL + FOOD_API_BASE_PATH + FOOD_SERVICE_ENDPOINT + "?location={location}";
 
